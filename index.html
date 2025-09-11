@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title }}</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>{{ site.title }}</h1>
+  <p>{{ site.description }}</p>
+
+  <!-- Your projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Phishing Detection Game</h3>
+      <p>Interactive game for teaching phishing awareness, built with Godot, Node.js, and MongoDB.</p>
+      <img src="assets/images/phishing-game.png" alt="Phishing Game Screenshot" width="400">
+      <video width="400" controls>
+        <source src="assets/videos/phishing-game-demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        <a href="https://username.github.io/phishing-game/">Live Demo</a> |
+        <a href="https://github.com/username/phishing-game">Source Code</a>
+      </p>
+    </div>
+  </section>
+</body>
+</html>
