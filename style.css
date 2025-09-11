@@ -3,3 +3,18 @@ body { font-family: Arial, sans-serif; margin: 20px; }
 .project img, .project video { display: block; margin: 10px 0; }
 .project a { margin-right: 15px; text-decoration: none; color: #0366d6; }
 .project a:hover { text-decoration: underline; }
+
+.media-container {
+  display: flex;
+  align-items: flex-start; /* Align top edges */
+  gap: 20px; /* Space between image and video */
+  margin-bottom: 20px;
+}
+
+.project-image, 
+.project-video {
+  width: 400px;   /* same width for both */
+  height: auto;   /* maintain aspect ratio */
+  object-fit: cover; /* scale properly */
+}
+
