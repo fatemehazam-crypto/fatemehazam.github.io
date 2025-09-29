@@ -3,73 +3,59 @@ layout: default
 title: Portfolio
 ---
 
-<h1>{{ site.title }}</h1>
-<p>{{ site.description }}</p>
-
-<section id="projects">
-  <h2>Projects</h2>
-
-  <!-- Phishing Detection Game -->
-  <!-- Phishing Detection Game -->
-<div class="project">
-  <h3>Phishing Detection Game</h3>
-  <p>
-    Multi-platform educational game teaching phishing recognition to middle and high school students, 
-    focused on age-appropriate cybersecurity education through gamified learning.
-  </p>
-  
-  <h4>Key Innovations</h4>
-  <ul>
-    <li>Developed dual-platform implementation (Arcade Cabinet & Desktop) for maximum accessibility</li>
-    <li>Created age-appropriate content tailored for middle and high school cognitive levels</li>
-    <li>Built comprehensive analytics model tracking student progress and vulnerability patterns</li>
-  </ul>
-
-  <h4>Technical Implementation</h4>
-  <ul>
-    <li>Arcade cabinet integration with hardware–software interface development</li>
-    <li>Adaptive difficulty system scaling complexity based on student performance</li>
-    <li>Real-time analytics dashboard measuring learning efficacy and knowledge retention</li>
-    <li>Multi-scenario engine covering various phishing vectors (email, social media, SMS)</li>
-  </ul>
-
-   <div class="media-container">
-      <img src="assets/images/phishing1.jpg" alt="Screenshot" class="project-image">
-      <video controls class="project-video">
-        <source src="assets/videos/phishing1.mp4" type="video/mp4">
-      </video>
-    </div>
-
+<div class="container">
+  <!-- Left column: portfolio / about -->
+  <aside class="sidebar">
+    <h1>{{ site.title }}</h1>
+    <p>{{ site.description }}</p>
     <p>
-      <a href="https://fatemehazam-crypto.github.io/phishing-game/">Live Demo</a> |
-      <a href="https://github.com/fatemehazam-crypto/phishing-game">Source Code</a>
+      Software Engineer with expertise in full-stack development, EdTech, and IoT systems.
+      Passionate about building tools that make technology accessible for education and research.
     </p>
-  </div>
-  <p>
-    <a href="https://fatemehazam-crypto.github.io/phishing-game/">Live Demo</a> |
-    <a href="https://github.com/fatemehazam-crypto/phishing-game">Source Code</a>
-  </p>
+  </aside>
+
+  <!-- Right column: projects -->
+  <main class="content">
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- Project card -->
+      <div class="project">
+        <h3>Phishing Detection Game</h3>
+        <p>
+          Multi-platform educational game teaching phishing recognition to middle and high school students.
+        </p>
+        <ul>
+          <li>Dual-platform implementation (Arcade & Desktop)</li>
+          <li>Adaptive difficulty & real-time analytics</li>
+        </ul>
+        <div class="media-container">
+          <img src="assets/images/phishing1.jpg" alt="Screenshot" class="project-image">
+        </div>
+        <p>
+          <a href="https://fatemehazam-crypto.github.io/phishing-game/">Live Demo</a> |
+          <a href="https://github.com/fatemehazam-crypto/phishing-game">Source Code</a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>IoT Smart City Prototype</h3>
+        <p>Smart city testbed integrating drones, sensors, and educational activities.</p>
+        <img src="assets/images/iot-smart-city.png" alt="IoT Smart City Screenshot" class="project-image">
+        <p>
+          <a href="https://fatemehazam-crypto.github.io/iot-smart-city/">Live Demo</a> |
+          <a href="https://github.com/fatemehazam-crypto/iot-smart-city">Source Code</a>
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>EdTech Tools</h3>
+        <p>Interactive coding and cybersecurity learning modules for classrooms.</p>
+        <img src="assets/images/edtech-tools.png" alt="EdTech Tools Screenshot" class="project-image">
+        <p>
+          <a href="https://github.com/fatemehazam-crypto/edtech-tools">Source Code</a>
+        </p>
+      </div>
+    </section>
+  </main>
 </div>
-
-  <!-- IoT Smart City -->
-  <div class="project">
-    <h3>IoT Smart City Prototype</h3>
-    <p>Smart city testbed integrating drones, sensors, and educational activities.</p>
-    <img src="assets/images/iot-smart-city.png" alt="IoT Smart City Screenshot" width="400">
-    <p>
-      <a href="https://fatemehazam-crypto.github.io/iot-smart-city/">Live Demo</a> |
-      <a href="https://github.com/fatemehazam-crypto/iot-smart-city">Source Code</a>
-    </p>
-  </div>
-
-  <!-- EdTech Tools -->
-  <div class="project">
-    <h3>EdTech Tools</h3>
-    <p>Interactive coding and cybersecurity learning modules for classrooms.</p>
-    <img src="assets/images/edtech-tools.png" alt="EdTech Tools Screenshot" width="400">
-    <p>
-      <a href="https://fatemehazam-crypto.github.io/edtech-tools/">Live Demo</a> |
-      <a href="https://github.com/fatemehazam-crypto/edtech-tools">Source Code</a>
-    </p>
-  </div>
-</section>
