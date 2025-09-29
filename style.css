@@ -1,20 +1,38 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
-.project { margin-bottom: 50px; }
-.project img, .project video { display: block; margin: 10px 0; }
-.project a { margin-right: 15px; text-decoration: none; color: #0366d6; }
-.project a:hover { text-decoration: underline; }
-
-.media-container {
+/* Layout */
+.container {
   display: flex;
-  align-items: flex-start; /* Align top edges */
-  gap: 20px; /* Space between image and video */
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 250px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.content {
+  flex: 3;
+}
+
+/* Projects */
+.project {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
   margin-bottom: 20px;
 }
 
-.project-image, 
-.project-video {
-  width: 400px;   /* same width for both */
-  height: auto;   /* maintain aspect ratio */
-  object-fit: cover; /* scale properly */
+.project h3 {
+  margin-top: 0;
+  color: #2c3e50;
 }
 
+.project-image {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+}
