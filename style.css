@@ -4,14 +4,16 @@
   padding-top: 1em;
 }
 
-.project img {
-  margin-top: 0.5em;
-  max-width: 100%;
-  height: auto;
-}
+
 
 .media-container {
   display: flex;
   gap: 10px; /* space between images */
   justify-content: flex-start; /* or center, if you want them centered */
+}
+.project-image {
+  max-width: 30%; /* scales both images equally */
+  height: auto;
+  border: 1px solid #ddd; /* optional border */
+  border-radius: 6px;     /* slightly rounded corners */
 }
