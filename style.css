@@ -16,3 +16,10 @@
   border: 1px solid #ddd; /* optional border */
   border-radius: 6px;     /* slightly rounded corners */
 }
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 850px;
+  margin-bottom: 2rem;
+  color: #333;
+}
