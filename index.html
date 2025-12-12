@@ -17,6 +17,88 @@ title: Portfolio
     </p>
   </div>
 </section>
+<section class="project" id="micro-aerial-hijacking">
+  <h2>Micro Aerial Vehicle Hijacking & Autonomous Flight Security Analysis</h2>
+
+  <!-- Short Overview -->
+  <p class="project-summary">
+    A research-driven project demonstrating real-time drone trajectory planning, battery-aware autonomous flight,
+    and an application-layer hijacking attack on the Crazyflie 2.1 micro-UAV. I engineered modified flight 
+    controllers that allow an attacker radio to override the legitimate commander mid-flight, redirect the drone 
+    to spoofed coordinates, and trigger anomaly detection systems.
+  </p>
+
+  <!-- Main Image -->
+  <div class="media-container">
+    <img src="assets/images/crazyflie-hijack.jpg" alt="Crazyflie Hijacking Demo" class="project-image">
+  </div>
+
+  <!-- Expandable Sections -->
+  <details>
+    <summary><strong>Trajectory Planning Module</strong></summary>
+    <p>
+      Built a real-time trajectory planner using Crazyflie kinematic constraints. Computes optimal paths, 
+      predicts total flight duration, and integrates battery-aware decision making.
+    </p>
+    <ul>
+      <li>Waypoint-based path computation</li>
+      <li>Velocity & thrust constraint modeling</li>
+      <li>Predictive flight-time estimation</li>
+    </ul>
+    <p><a href="https://github.com/yourrepo/trajectory_planner" target="_blank">View Repository →</a></p>
+  </details>
+
+  <details>
+    <summary><strong>Battery Monitoring & Flight-Time Estimation</strong></summary>
+    <p>
+      Developed a predictive battery model using thrust demand, hover power, and vertical/horizontal movement cost. 
+      Produces real-time remaining flight time estimates during autonomous missions.
+    </p>
+    <ul>
+      <li>Energy consumption modeling</li>
+      <li>Battery-aware trajectory validation</li>
+      <li>Live remaining-flight-time estimator</li>
+    </ul>
+    <p><a href="https://github.com/yourrepo/battery_model" target="_blank">View Repository →</a></p>
+  </details>
+
+  <details>
+    <summary><strong>Commander Hijacking Attack</strong></summary>
+    <p>
+      Discovered an application-layer vulnerability in the Crazyflie control protocol that allows multiple Crazyradios
+      to connect simultaneously. Built a hacked MotionCommander and HighLevelCommander enabling an attacker controller 
+      to override the legitimate flight commands through high-frequency packet injection.
+    </p>
+    <ul>
+      <li>Modified Crazyflie client to accept multiple radios</li>
+      <li>Attacker injects rapid spoofed commands mid-flight</li>
+      <li>Drone redirects to attacker-selected coordinates</li>
+    </ul>
+    <p>
+      <a href="https://github.com/yourrepo/hacked_motion_commander" target="_blank">Motion Commander Repo →</a><br>
+      <a href="https://github.com/yourrepo/hacked_hl_commander" target="_blank">High-Level Commander Repo →</a>
+    </p>
+  </details>
+
+  <details>
+    <summary><strong>Anomaly Detection & Telemetry Monitoring</strong></summary>
+    <p>
+      Developed a real-time anomaly detector comparing actual telemetry against expected trajectories.
+      Flags deviations created by hijacking events and produces logs for post-flight analysis.
+    </p>
+    <ul>
+      <li>Deviation thresholds based on kinematic expectations</li>
+      <li>Live telemetry comparison (LPS & IMU)</li>
+      <li>Attack signature detection based on packet frequency</li>
+    </ul>
+    <p><a href="https://github.com/yourrepo/anomaly_detector" target="_blank">View Repository →</a></p>
+  </details>
+
+  <!-- Button Row -->
+  <p class="project-links">
+    <a href="https://github.com/yourrepo" target="_blank" class="button">View All Related Repositories</a>
+  </p>
+</section>
 
 <section id="projects">
   <div class="wrapper">
