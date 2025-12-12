@@ -170,6 +170,109 @@ title: Portfolio
     <a href="https://github.com/yourrepo" target="_blank" class="button">View All Related Repositories</a>
   </p>
 </section>
+<section class="project" id="phishing-detection-analytics">
+  <h2>Phishing Detection Game (Godot Arcade + Web Analytics Platform)</h2>
+
+  <!-- Summary -->
+  <p class="project-summary">
+    A Godot-based educational arcade game teaching phishing detection to middle and high school students. 
+    The game is exportable to desktop and HTML5, and includes a custom real-time analytics system built 
+    with Node.js, Express, and MongoDB. Gameplay events are streamed to a live dashboard to measure learning outcomes, 
+    difficulty progression, and user performance trends.
+  </p>
+
+  <!-- Images -->
+  <div class="media-container">
+    <img src="assets/images/phishing1.png" alt="Phishing Game Screenshot" class="project-image" style="width:18%;">
+    <img src="assets/images/phishing4.jpg" alt="Phishing Game Screenshot" class="project-image" style="width:23%;">
+  </div>
+
+  <details>
+    <summary><strong>Game Design & Implementation</strong></summary>
+    <p>
+      The game is built in Godot and designed for both arcade cabinet deployment and standard desktop browsers. 
+      It scales difficulty based on the player's accuracy and reaction time while introducing increasingly sophisticated 
+      phishing patterns, domain spoofing cues, and timing pressure.
+    </p>
+    <ul>
+      <li>Godot 4.x engine</li>
+      <li>Dynamic difficulty adjustment</li>
+      <li>Phishing pattern generation system</li>
+      <li>Both desktop and HTML5 export supported</li>
+    </ul>
+    <p><a href="https://github.com/fatemehazam-crypto/phishing-game" target="_blank">Source Code →</a></p>
+  </details>
+
+  <details>
+    <summary><strong>Real-Time Analytics Architecture</strong></summary>
+    <p>
+      The HTML5-exported Godot build communicates directly with a backend analytics service running on an Ubuntu server. 
+      All gameplay events—choices, mistakes, response times, difficulty transitions, session data—are logged in real time 
+      and can be inspected through a dashboard.
+    </p>
+
+    <h4>📡 Client-to-Server Event Streaming</h4>
+    <ul>
+      <li>Godot Web export uses JavaScript bridge for HTTP requests</li>
+      <li>Events POSTed to Express API</li>
+      <li>Stored in MongoDB for aggregation, dashboards, and long-term studies</li>
+    </ul>
+
+    <h4>🖥 Server Stack</h4>
+    <ul>
+      <li>Node.js v24.9.0</li>
+      <li>Express.js API server</li>
+      <li>MongoDB with indexed event collections</li>
+      <li>Ubuntu cloud server (self-hosted)</li>
+    </ul>
+
+    <h4>📊 Analytics Dashboard</h4>
+    <ul>
+      <li>Web-based dashboard built using vanilla HTML, JS, and REST</li>
+      <li>Tracks accuracy, response time, phishing detection type, level progression</li>
+      <li>Realtime charts for educators & researchers</li>
+      <li>Supports classroom monitoring and long-term analytics</li>
+    </ul>
+
+  </details>
+
+  <details>
+    <summary><strong>System Architecture Overview</strong></summary>
+    <p><strong>✔ Godot Game → HTML5 Export</strong> (runs inside browser)</p>
+    <p><strong>✔ Analytics JS Module</strong> embedded inside the exported HTML</p>
+    <p><strong>✔ Node.js/Express Backend</strong> hosted on Ubuntu</p>
+    <p><strong>✔ MongoDB Database</strong> storing gameplay events</p>
+    <p><strong>✔ Web Dashboard</strong> reading aggregated metrics</p>
+
+    <h4>Workflow</h4>
+    <ol>
+      <li>Player interacts with the Godot game inside browser.</li>
+      <li>Game sends JSON events to Express endpoint.</li>
+      <li>Server validates & stores events in MongoDB.</li>
+      <li>Dashboard queries analytics API and visualizes the data.</li>
+    </ol>
+
+    <p><em>
+      This setup is designed to later support multiplayer, leaderboards, 
+      machine-learning–based difficulty tuning, or classroom-wide telemetry.
+    </em></p>
+  </details>
+
+  <details>
+    <summary><strong>Planned Extensions</strong></summary>
+    <ul>
+      <li>Adaptive ML-based difficulty prediction</li>
+      <li>Teacher dashboard with student-by-student progress</li>
+      <li>Expanded phishing dataset with generative phishing examples</li>
+      <li>Integration with your smart-city and IoT education modules</li>
+    </ul>
+  </details>
+
+  <p class="project-links">
+    <a href="https://fatemehazam-crypto.github.io/phishing-game/" target="_blank" class="button">Live Demo</a>
+    <a href="https://github.com/fatemehazam-crypto/phishing-game" target="_blank" class="button">Source Code</a>
+  </p>
+</section>
 
 <section id="projects">
   <div class="wrapper">
