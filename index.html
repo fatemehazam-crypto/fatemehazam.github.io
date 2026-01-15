@@ -1,32 +1,37 @@
-<div class="layout">
+--
+layout: none
+title: Portfolio
+---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+
+<body>
+  <div class="layout">
+
+  <!-- SIDEBAR -->
   <aside class="sidebar">
     <h1>Portfolio</h1>
     <div class="subtitle">
       Software Engineer<br>
       EdTech · IoT · Security
     </div>
-
     <nav>
       <a href="#about">About</a>
-      <a href="#projects">Projects</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#micro-aerial-hijacking">Drone Security</a>
       <a href="#phishing-detection-analytics">Phishing Game</a>
     </nav>
   </aside>
-
+ <!-- MAIN -->
   <main>
-
----
-layout: default
-title: Portfolio
----
-
-<!-- Custom CSS -->
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-
 <section id="about">
-  <div class="wrapper">
+  
     <h2>About Me</h2>
     <p class="intro-text">
       Senior Software Engineer with over six years of experience designing and building full-stack systems that solve complex, real-world problems.
@@ -35,8 +40,15 @@ title: Portfolio
       My current work explores AI-assisted systems, autonomous platforms, and the intersection of emerging technology with practical usability.
     </p>
     </p>
-  </div>
 </section>
+     <!-- PORTFOLIO HEADER -->
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <p class="intro-text">
+        Selected research and engineering projects focused on autonomous systems,
+        applied security, and real-time analytics.
+      </p>
+    </section>
 <section class="project">
   <h2>In-Progress Work: Rust-Based Secure Commander Middleware for Drone Fleets</h2>
   <p class="tagline">
