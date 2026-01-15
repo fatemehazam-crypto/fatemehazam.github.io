@@ -49,73 +49,7 @@ title: Portfolio
         applied security, and real-time analytics.
       </p>
     </section>
-<section class="project">
-  <h2>In-Progress Work: Rust-Based Secure Commander Middleware for Drone Fleets</h2>
-  <p class="tagline">
-    Building a high-performance Rust security gateway that prevents command-injection and hijacking attacks in autonomous drone fleets.
-  </p>
 
-  <details>
-    <summary><strong>Overview</strong></summary>
-    <p>
-      In modern smart-city operations, drones manage real-time traffic monitoring, inspections, and emergency response. 
-      However, these systems are vulnerable: attackers can inject malicious flight commands through radio links, causing 
-      route deviations, stalling missions, or forcing unsafe maneuvers.
-    </p>
-    <p>
-      Existing drone control frameworks—such as Python’s <code>cflib</code> used for Crazyflie drones—often lack rigorous,
-      real-time command validation. This project introduces a Rust-based security middleware designed to eliminate that gap.
-    </p>
-  </details>
-
-  <details>
-    <summary><strong>The Solution</strong></summary>
-    <p>
-      I am architecting and developing a secure command-validation middleware that acts as a mandatory gateway between 
-      ground-control applications and physical drones. The middleware validates every command before it ever reaches the aircraft,
-      ensuring authenticity, integrity, and mission-level safety.
-    </p>
-  </details>
-
-  <details>
-    <summary><strong>Technical Approach & Architecture</strong></summary>
-    
-    <h4>Security as a Sidecar</h4>
-    <p>
-      The middleware is implemented as a standalone Rust service (“sidecar”) that intercepts all outbound flight commands. 
-      This allows seamless integration with existing Python-based controllers (<code>cflib</code>) without requiring 
-      major code changes.
-    </p>
-
-    <h4>Multi-Layer Command Validation</h4>
-    <ul>
-      <li>CRC and packet-integrity verification</li>
-      <li>Commander ID and source-authorization checks</li>
-      <li>Cryptographic signatures ensuring command authenticity</li>
-    </ul>
-
-    <h4>Attack Mitigation</h4>
-    <ul>
-      <li>Real-time rate limiting to prevent command flooding</li>
-      <li>Rules engine to detect suspicious patterns and unauthorized waypoint changes</li>
-      <li>Trajectory-aware anomaly detection for off-path maneuvers</li>
-    </ul>
-
-    <h4>Why Rust?</h4>
-    <p>
-      Rust is used to guarantee memory safety, eliminate buffer-overflow vulnerabilities, and provide fearless concurrency 
-      for managing multiple drone connections in parallel. The middleware is designed for high reliability, predictable latency, 
-      and safe integration with real-time flight operations.
-    </p>
-  </details>
-
-  <details>
-  <summary><strong>Planned Extensions</strong></summary>
-  <ul>
-    <li>Integration with my existing hijacking-simulation framework</li>
-  </ul>
-</details>
-</section> <!-- closes the Rust project section -->
 
 <section class="project" id="micro-aerial-hijacking">
   <h2>Micro Aerial Vehicle Hijacking & Autonomous Flight Security Analysis</h2>
@@ -324,6 +258,73 @@ title: Portfolio
 
 
 </section>
+    <section class="project">
+  <h2>In-Progress Work: Rust-Based Secure Commander Middleware for Drone Fleets</h2>
+  <p class="tagline">
+    Building a high-performance Rust security gateway that prevents command-injection and hijacking attacks in autonomous drone fleets.
+  </p>
+
+  <details>
+    <summary><strong>Overview</strong></summary>
+    <p>
+      In modern smart-city operations, drones manage real-time traffic monitoring, inspections, and emergency response. 
+      However, these systems are vulnerable: attackers can inject malicious flight commands through radio links, causing 
+      route deviations, stalling missions, or forcing unsafe maneuvers.
+    </p>
+    <p>
+      Existing drone control frameworks—such as Python’s <code>cflib</code> used for Crazyflie drones—often lack rigorous,
+      real-time command validation. This project introduces a Rust-based security middleware designed to eliminate that gap.
+    </p>
+  </details>
+
+  <details>
+    <summary><strong>The Solution</strong></summary>
+    <p>
+      I am architecting and developing a secure command-validation middleware that acts as a mandatory gateway between 
+      ground-control applications and physical drones. The middleware validates every command before it ever reaches the aircraft,
+      ensuring authenticity, integrity, and mission-level safety.
+    </p>
+  </details>
+
+  <details>
+    <summary><strong>Technical Approach & Architecture</strong></summary>
+    
+    <h4>Security as a Sidecar</h4>
+    <p>
+      The middleware is implemented as a standalone Rust service (“sidecar”) that intercepts all outbound flight commands. 
+      This allows seamless integration with existing Python-based controllers (<code>cflib</code>) without requiring 
+      major code changes.
+    </p>
+
+    <h4>Multi-Layer Command Validation</h4>
+    <ul>
+      <li>CRC and packet-integrity verification</li>
+      <li>Commander ID and source-authorization checks</li>
+      <li>Cryptographic signatures ensuring command authenticity</li>
+    </ul>
+
+    <h4>Attack Mitigation</h4>
+    <ul>
+      <li>Real-time rate limiting to prevent command flooding</li>
+      <li>Rules engine to detect suspicious patterns and unauthorized waypoint changes</li>
+      <li>Trajectory-aware anomaly detection for off-path maneuvers</li>
+    </ul>
+
+    <h4>Why Rust?</h4>
+    <p>
+      Rust is used to guarantee memory safety, eliminate buffer-overflow vulnerabilities, and provide fearless concurrency 
+      for managing multiple drone connections in parallel. The middleware is designed for high reliability, predictable latency, 
+      and safe integration with real-time flight operations.
+    </p>
+  </details>
+
+  <details>
+  <summary><strong>Planned Extensions</strong></summary>
+  <ul>
+    <li>Integration with my existing hijacking-simulation framework</li>
+  </ul>
+</details>
+</section> <!-- closes the Rust project section -->
 
   </main>
 </div>
