@@ -333,4 +333,21 @@ video {
   height: 100%;
   object-fit: cover;
 }
+.sidebar-links {
+  margin-top: 1rem;
+}
+
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #0a66c2; /* LinkedIn blue */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.linkedin-link:hover {
+  text-decoration: underline;
+}
 
