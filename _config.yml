@@ -1,3 +1,6 @@
 #title: Portfolio
 #description: Software Engineer | EdTech & IoT Projects
 #theme: jekyll-theme-minimal
+title: Portfolio
+description: Software Engineer Portfolio
+markdown: kramdown
