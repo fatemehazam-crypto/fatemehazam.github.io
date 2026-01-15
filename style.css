@@ -289,5 +289,17 @@ h2 {
 video {
   box-shadow: 0 14px 32px rgba(0,0,0,0.6);
 }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.video-grid video {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
 
 
