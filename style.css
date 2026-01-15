@@ -350,4 +350,38 @@ video {
 .linkedin-link:hover {
   text-decoration: underline;
 }
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper img {
+  cursor: zoom-in;
+  border-radius: 12px;
+}
+
+/* Hover overlay */
+.image-wrapper::after {
+  content: attr(data-caption);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.image-wrapper:hover::after {
+  opacity: 1;
+}
+
 
