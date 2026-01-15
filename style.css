@@ -1,29 +1,35 @@
 /* ================================
-   Global Reset
+   Base
 ================================ */
-*,
-*::before,
-*::after {
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --primary: #1f2937;
+  --secondary: #6b7280;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+}
+
+* {
   box-sizing: border-box;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Ubuntu, sans-serif;
-  background: #f9fafb;
-  color: #1f2933;
-  line-height: 1.65;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+  line-height: 1.7;
 }
 
 /* ================================
-   Layout
+   Page Layout
 ================================ */
 .wrapper {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 6rem;
 }
 
 section {
@@ -31,30 +37,36 @@ section {
 }
 
 /* ================================
-   Headings
+   Typography
 ================================ */
-h1, h2, h3, h4 {
-  font-weight: 600;
-  letter-spacing: -0.02em;
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.3rem;
 }
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
-  font-size: 1.25rem;
-  margin-top: 2rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  max-width: 900px;
+  color: var(--secondary);
 }
 
 /* ================================
-   Text
+   About Section
 ================================ */
-p {
-  max-width: 900px;
-  margin-bottom: 1.2rem;
-  color: #374151;
+#about {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 3rem 3.5rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
 }
 
 .intro-text {
@@ -65,15 +77,17 @@ p {
    Projects
 ================================ */
 .project {
-  border-left: 4px solid #e5e7eb;
-  padding-left: 2rem;
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 3rem;
   margin-top: 3rem;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  border-left: 6px solid var(--accent);
 }
 
 .project-summary,
 .tagline {
-  font-size: 1rem;
-  color: #4b5563;
+  color: var(--secondary);
   max-width: 850px;
 }
 
@@ -88,25 +102,23 @@ p {
 }
 
 .project-image {
-  border-radius: 10px;
-  max-width: 100%;
+  border-radius: 12px;
   height: auto;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  max-width: 100%;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 /* ================================
    Details (Accordion)
 ================================ */
 details {
-  margin-top: 1.25rem;
-  padding-left: 0.5rem;
+  margin-top: 1.3rem;
 }
 
 summary {
-  cursor: pointer;
   font-weight: 600;
-  color: #111827;
-  list-style: none;
+  cursor: pointer;
+  color: var(--primary);
 }
 
 summary::marker {
@@ -114,31 +126,21 @@ summary::marker {
 }
 
 summary::before {
-  content: "▸";
-  margin-right: 0.5rem;
-  color: #6b7280;
+  content: "›";
+  font-size: 1.2rem;
+  margin-right: 0.6rem;
+  color: var(--accent);
 }
 
 details[open] summary::before {
-  content: "▾";
+  content: "⌄";
 }
 
 /* ================================
-   Lists
-================================ */
-ul {
-  margin-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-/* ================================
-   Buttons & Links
+   Links & Buttons
 ================================ */
 a {
-  color: #2563eb;
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -149,25 +151,24 @@ a:hover {
 .button {
   display: inline-block;
   margin-right: 1rem;
-  margin-top: 1rem;
-  padding: 0.6rem 1.3rem;
-  border-radius: 6px;
-  border: 1px solid #2563eb;
-  color: #2563eb;
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.35);
 }
 
 .button:hover {
-  background: #2563eb;
-  color: white;
+  background: #1e40af;
 }
 
 /* ================================
-   Stability (No Movement)
+   Stability
 ================================ */
-body,
-.wrapper {
+body, section, .wrapper {
   position: static !important;
   transform: none !important;
 }
