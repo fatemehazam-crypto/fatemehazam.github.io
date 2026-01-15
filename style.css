@@ -91,3 +91,7 @@ summary {
   background: #333;
   color: #fff;
 }
+/* Prevent shifting */
+img {
+  display: block;
+}
