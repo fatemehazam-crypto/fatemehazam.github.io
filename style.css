@@ -91,3 +91,20 @@ img {
   display: block;
   max-width: 100%;
 }
+/* Hard stop for theme movement */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  position: static !important;
+  transform: none !important;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  transform: none !important;
+}
