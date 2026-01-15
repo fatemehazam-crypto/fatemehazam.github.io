@@ -1,10 +1,3 @@
-/* Layout */
-.wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2.5rem 1.5rem;
-}
-
 section {
   margin-bottom: 4rem;
 }
@@ -43,7 +36,8 @@ h3 {
 .media-container {
   display: flex;
   gap: 1.5rem;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
   margin: 1.5rem 0;
 }
 
@@ -52,13 +46,13 @@ h3 {
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-/* Size variants */
+/* Stable size variants */
 .project-image.small {
-  width: 18%;
+  width: 180px;
 }
 
 .project-image.medium {
-  width: 23%;
+  width: 240px;
 }
 
 /* Details accordion */
@@ -91,7 +85,9 @@ summary {
   background: #333;
   color: #fff;
 }
-/* Prevent shifting */
+
+/* Prevent layout shift */
 img {
   display: block;
+  max-width: 100%;
 }
