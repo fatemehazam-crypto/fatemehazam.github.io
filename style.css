@@ -49,14 +49,9 @@ a:hover {
 ====================================== */
 .sidebar {
   position: fixed;
-  left: 0;
-  top: 0;
   width: 280px;
-  height: 100vh;
-  background: var(--panel);
-  border-right: 1px solid var(--border);
-  padding: 2.5rem 2rem;
 }
+
 
 .sidebar h1 {
   font-size: 1.4rem;
@@ -88,6 +83,7 @@ main {
   padding: 4rem 4.5rem;
   max-width: 1100px;
 }
+
 
 /* ======================================
    SECTIONS
