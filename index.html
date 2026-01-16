@@ -62,17 +62,29 @@ title: Portfolio
       </p>
     </section>
 <section class="project" id="micro-aerial-hijacking">
-  <h2>Micro Aerial Vehicle Hijacking & Autonomous Flight Security Analysis</h2>
+  <h2>Micro Aerial Vehicle Hijacking & Autonomous Flight Security Analysis(OCII / OCAST)</h2>
 
   <!-- Short Overview -->
   <p class="project-summary">
-    A research-driven project at the OKlahoma Cyber Innovation Institute, focusing on use-cases of smart city development.
-    This project demonstrates real-time drone trajectory planning, 
-    battery-aware autonomous flight, and an application-layer hijacking attack
-    on the Crazyflie 2.1 micro-UAV. I created modified flight controllers that 
-    allow an attacker radio to override the legitimate commander mid-flight, 
-    redirecting the drone to spoofed GPS coordinates while anomaly-detection 
-    algorithms flag deviations from the expected trajectory.
+    Applied full-stack engineering principles to autonomous drone systems, 
+    with a focus on safety-critical control flows, secure communications, 
+    and real-world deployment constraints. This work is part of an 
+    OCAST-supported initiative led by the Oklahoma Cyber Innovation 
+    Institute (OCII) to position Tulsa as a regional hub for 
+    unmanned aerial systems and smart-city technologies.
+    My research and development efforts examine secure drone operations
+    in urban environments, including multi-drone coordination, centralized
+    and distributed command models, and the risks introduced by compromised
+    command-and-control channels. As smart-city infrastructure evolves, 
+    these systems create new cybersecurity challenges—such as unauthorized
+    controller access and mid-flight command hijacking—that must be 
+    identified and mitigated early.
+   This project bridges applied engineering, cybersecurity research, and 
+    real-world use cases, demonstrating both the capabilities of autonomous
+    aerial systems and the importance of security-by-design in emerging 
+    smart-city deployments. The work supports informed decision-making for 
+    municipalities, educators, and industry partners while advancing practical, 
+    security-aware autonomy.
   </p>
    <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects" target="_blank">View Repository →</a></p>
   <!-- Main Videos -->
@@ -91,6 +103,26 @@ title: Portfolio
 </div>
 
 <!-- Expandable Sections -->
+  <details>
+  <summary><strong>T</strong></summary>
+
+  <p>
+    Built a real-time trajectory planner using Crazyflie kinematic constraints.
+    Computes optimal paths based on flight missions and integrates battery-aware
+    decision making.
+  </p>
+
+  <ul>
+    <li>Waypoint-based path computation</li>
+    <li>Trajecotory modeling and visualization</li>
+  </ul>
+
+  <p class="repo-links">
+    <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Flight%20Control/trajectory%20mapping" target="_blank">
+      View Repository →
+    </a>
+  </p>
+</details>
 <details>
   <summary><strong>Trajectory Planning Module</strong></summary>
 
