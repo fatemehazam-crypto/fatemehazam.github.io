@@ -65,39 +65,38 @@ title: Portfolio
 <section class="project" id="smartcity-monitor">
   <h2>Smart City Real-Time IoT Monitoring Platform</h2>
 
-  <p class="project-summary">
-    Designed and developed a full-stack real-time IoT monitoring platform for
-    smart-city environments. I developed the React frontend and Node.js backend,
-    integrating live data from distributed IoT and autonomous-system nodes into
-    a unified monitoring and analytics interface.
-  </p>
+<p class="project-summary">
+  Designed and built a full-stack real-time IoT monitoring platform for smart city cybersecurity
+  research at the Oklahoma Cyber Innovation Institute. The system ingests live data from seven
+  distributed sensor nodes across four RF frequency bands — WiFi, 433MHz, GPS L1/L5, and LoRaWAN —
+  and streams it to a browser-based dashboard with sub-second latency using an event-driven MQTT
+  and Socket.io architecture. The platform detects and classifies RF disruption signatures in real
+  time, distinguishing between packet loss, transmission buffering, and signal degradation using a
+  lab-calibrated Jammer-to-Signal interference model. It also integrates live telemetry from
+  autonomous Crazyflie drone swarms, visualizing flight paths and mission state alongside the
+  sensor network.
+</p>
 
-  <p class="project-summary">
-    The framework supports real-time sensor monitoring, system-status tracking,
-    RF anomaly detection, and integration with autonomous platforms. The backend
-    provides REST APIs and real-time communication while the frontend provides
-    interactive visualization of live system data.
-  </p>
+<ul>
+  <li>React frontend with live sensor dashboards, RF disruption analysis, and drone flight path visualization on an HTML5 canvas</li>
+  <li>Node.js backend with MQTT ingestion, Socket.io broadcast, REST API, and persistent SQLite storage</li>
+  <li>Event-driven architecture processing multi-band RF sensor data across 7 physical nodes in real time</li>
+  <li>RF jamming detection pipeline classifying disruption type, packet loss rate, and transmission rhythm anomalies</li>
+  <li>Crazyflie drone telemetry integration with ROS 2 output and automated MCAP flight recording</li>
+  <li>Deployed on a physical smart city testbed as the primary research instrument for C-UAS collateral damage studies</li>
+</ul>
 
-  <ul>
-    <li>React frontend for real-time IoT data visualization and monitoring</li>
-    <li>Node.js backend with REST APIs and real-time communication</li>
-    <li>MQTT-based communication with distributed IoT sensor nodes</li>
-    <li>Real-time processing and visualization of sensor and RF data</li>
-    <li>Integrated monitoring of environmental, network, and system status</li>
-    <li>Designed and deployed for a multi-node smart-city testbed</li>
-  </ul>
-
-  <p class="project-summary">
-    <strong>Recognition:</strong> Selected to present this framework at
-    ThunderPlains 2026 <a href="https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/" 
-     target="_blank" 
+<p class="project-summary">
+  <strong>Recognition:</strong> Selected to present this work at ThunderPlains 2026, Oklahoma's
+  annual developer conference, and related research accepted at the IEEE International Conference
+  on Cyber, Autonomous, and Robotic Systems (CARS) 2026.
+  <a href="https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/"
+     target="_blank"
      rel="noopener noreferrer"
      class="linkedin-link">
-    🔗 Posting
-  </a>. Related research has also been accepted for presentation
-    at the IEEE CARS 2026 conference.
-  </p>
+    🔗 ThunderPlains post
+  </a>
+</p>
 
   <p class="project-links">
     <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/smartcity-monitor"
