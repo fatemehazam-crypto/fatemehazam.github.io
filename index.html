@@ -7,10 +7,12 @@ title: Portfolio
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Software engineer and security researcher — applied ML, RF/IoT security, and autonomous systems research at the Oklahoma Cyber Innovation Institute.">
   <title>{{ page.title }}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -22,434 +24,377 @@ title: Portfolio
   <aside class="sidebar">
     <h1>Fatemeh Azam</h1>
     <div class="subtitle">
-      Software Engineer<br>
-      EdTech · IoT · Security
+      Software Engineer &amp; Security Researcher<br>
+      Autonomous Systems · RF/IoT Security · Applied ML
     </div>
     <div class="sidebar-links">
-  <a href="https://www.linkedin.com/in/fatemeh-azam-1a219b55/" 
-     target="_blank" 
-     rel="noopener noreferrer"
-     class="linkedin-link">
-    🔗 LinkedIn
-  </a>
-</div>
+      <a href="https://www.linkedin.com/in/fatemeh-azam-1a219b55/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="linkedin-link"
+         style="display:block; margin-bottom:0.5rem;">
+        🔗 LinkedIn
+      </a>
+      <a href="https://github.com/fatemehazam-crypto"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="linkedin-link"
+         style="display:block; margin-bottom:0.5rem; color: var(--accent);">
+        🔗 GitHub
+      </a>
+      <!-- TODO: add email and/or a resume PDF link here, e.g.:
+      <a href="mailto:you@example.com" class="linkedin-link" style="display:block; color: var(--accent);">✉ Email</a>
+      <a href="/assets/resume.pdf" class="linkedin-link" style="display:block; color: var(--accent);">📄 Resume</a>
+      -->
+    </div>
     <nav>
       <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#micro-aerial-hijacking">Drone Security</a>
+      <a href="#smartcity-monitor">Smart City Monitoring</a>
+      <a href="#micro-aerial-hijacking">Drone Security Research</a>
       <a href="#phishing-detection-analytics">Phishing Game</a>
-      <a href="#work-in-progress">Work in Progress</a>
     </nav>
   </aside>
- <!-- MAIN -->
+
+  <!-- MAIN -->
   <main>
-<section id="about">
-  
-    <h2>About Me</h2>
-    <p class="intro-text">
-      Software Engineer and Cybersecurity Researcher working at the intersection of AI, cybersecurity, autonomous systems, and IoT. 
-      I build and evaluate real-world systems that combine software engineering, intelligent detection, and cyber-physical technologies.
-      My current work focuses on AI-assisted threat detection, autonomous drone security, RF resilience, and smart-city systems, with an emphasis 
-      on turning emerging technologies into practical, secure solutions.
-    </p>
-</section>
-     <!-- PORTFOLIO HEADER -->
-    <section id="portfolio">
-      <h2>Portfolio</h2>
+
+    <section id="about">
+      <h2>About Me</h2>
       <p class="intro-text">
-        Selected research and engineering projects focused on autonomous systems,
-        applied security, and real-time analytics.
+        I am a software engineer and security researcher at the Oklahoma Cyber Innovation
+        Institute (OCII), University of Tulsa, where I design, build, and evaluate real-world
+        systems at the intersection of applied machine learning, cybersecurity, and autonomous
+        systems. My research identified and demonstrated a command-hijacking vulnerability in
+        autonomous drone control protocols, and produced the detection system that addresses
+        it — published at IEEE CARS 2026. Alongside this research, I build the full-stack
+        platforms, RF sensor networks, and embedded infrastructure that carry this work from
+        the lab into deployable, real-world systems.
       </p>
     </section>
 
-<section class="project" id="smartcity-monitor">
-  <h2>Smart City Real-Time IoT Monitoring Platform</h2>
+    <section id="portfolio">
+      <h2>Selected Work</h2>
+      <p class="intro-text">
+        The projects below span systems engineering, applied security research, and real-time
+        analytics — from the sensor network that instruments a smart-city testbed, to the
+        vulnerability research and published detection system built on top of it, to the
+        active work extending that research to multi-drone swarms.
+      </p>
+    </section>
 
-<p class="project-summary">
-  Designed and built a full-stack real-time IoT monitoring platform for smart city cybersecurity
-  research at the Oklahoma Cyber Innovation Institute. The system ingests live data from
-  distributed sensor nodes across four RF frequency bands — WiFi, 433MHz, GPS L1/L5, and LoRaWAN —
-  and streams it to a browser-based dashboard with sub-second latency using an event-driven MQTT
-  and Socket.io architecture. The platform detects and classifies RF disruption signatures in real
-  time, distinguishing between packet loss, transmission buffering, and signal degradation using a
-  lab-calibrated Jammer-to-Signal interference model. It also integrates live telemetry from
-  autonomous drone swarms, visualizing flight paths and mission state alongside the
-  sensor network.
-</p>
+    <section class="project" id="smartcity-monitor">
+      <h2>Smart City Real-Time IoT Monitoring Platform</h2>
 
-<ul>
-  <li>React frontend with live sensor dashboards, RF disruption analysis, and drone flight path visualization on an HTML5 canvas</li>
-  <li>Node.js backend with MQTT ingestion, Socket.io broadcast, REST API, and persistent SQLite storage</li>
-  <li>Event-driven architecture processing multi-band RF sensor data across 7 physical nodes in real time</li>
-  <li>RF jamming detection pipeline classifying disruption type, packet loss rate, and transmission rhythm anomalies</li>
-  <li>Crazyflie drone telemetry integration with ROS 2 output and automated MCAP flight recording</li>
-  <li>Deployed on a physical smart city testbed as the primary research instrument for C-UAS collateral damage studies</li>
-</ul>
+      <p class="project-summary">
+        Designed and built a full-stack real-time IoT monitoring platform for smart-city
+        cybersecurity research at OCII. The system ingests live data from distributed sensor
+        nodes across four RF frequency bands — Wi-Fi, 433 MHz, GPS L1/L5, and LoRaWAN — and
+        streams it to a browser-based dashboard with sub-second latency using an event-driven
+        MQTT and Socket.io architecture. It detects and classifies RF disruption signatures in
+        real time, distinguishing packet loss, transmission buffering, and signal degradation
+        using a lab-calibrated jammer-to-signal interference model, and integrates live
+        telemetry from autonomous drone missions alongside the sensor network.
+      </p>
 
-<p class="project-summary">
-  <strong>Recognition:</strong> Selected to present this work at ThunderPlains 2026, Oklahoma's
-  annual developer conference, and related research accepted at the IEEE International Conference
-  on Cyber, Autonomous, and Robotic Systems (CARS) 2026.
-  <a href="https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="linkedin-link">
-    🔗 ThunderPlains post
-  </a>
-</p>
+      <ul>
+        <li>React frontend with live sensor dashboards, RF disruption analysis, and drone flight-path visualization on an HTML5 canvas</li>
+        <li>Node.js backend with MQTT ingestion, Socket.io broadcast, a REST API, and persistent SQLite storage</li>
+        <li>Event-driven architecture processing multi-band RF sensor data across 7 physical nodes in real time</li>
+        <li>RF jamming detection pipeline classifying disruption type, packet loss rate, and transmission-rhythm anomalies</li>
+        <li>Crazyflie drone telemetry integration with ROS 2 output and automated MCAP flight recording</li>
+        <li>Deployed on a physical smart-city testbed as the primary research instrument for the collateral-damage assessment study detailed below</li>
+      </ul>
 
-  <p class="project-links">
-    <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/smartcity-monitor"
-       target="_blank"
-       rel="noopener noreferrer">
-      View Source Code →
-    </a>
-  </p>
-   <!-- Images -->
-  <div class="media-container">
-      <img src="assets/images/smartcity4.png"
-       alt="SmartCity Monitoring Dashboard"
-       title="Dashboard"
-       class="project-image"
-      >
-</section>
+      <p class="project-summary">
+        <strong>Recognition:</strong> Selected to present this work at ThunderPlains 2026,
+        Oklahoma's annual developer conference, with related research accepted at the IEEE
+        International Conference on Cyber, Autonomous, and Robotic Systems (CARS) 2026.
+        <a href="https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="linkedin-link">
+          🔗 ThunderPlains post
+        </a>
+      </p>
 
+      <p class="project-links">
+        <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/smartcity-monitor"
+           target="_blank"
+           rel="noopener noreferrer">
+          View Source Code →
+        </a>
+      </p>
 
-<section class="project" id="micro-aerial-hijacking">
-  <h2>Micro Aerial Vehicle Hijacking & Autonomous Flight Security Analysis(OCII / OCAST)</h2>
+      <div class="media-container">
+        <div class="image-wrapper" data-caption="Smart City RF Monitoring Dashboard">
+          <img src="assets/images/smartcity4.png"
+               alt="SmartCity Monitoring Dashboard"
+               title="Dashboard"
+               class="project-image">
+        </div>
+      </div>
+    </section>
 
-  <!-- Short Overview -->
-  <p class="project-summary">
-    Applied full-stack engineering principles to autonomous drone agents,
-    validating command-and-control behavior, safety boundaries, and 
-    recovery under failure and adversarial conditions.This work is part of
-    an OCAST-supported initiative led by the Oklahoma Cyber Innovation 
-    Institute (OCII) to position Tulsa as a regional hub for 
-    unmanned aerial systems and smart-city technologies.
-    My research and development efforts examine secure drone operations
-    in urban environments, including multi-drone coordination, centralized
-    and distributed command models, and the risks introduced by compromised
-    command-and-control channels. As smart-city infrastructure evolves, 
-    these systems create new cybersecurity challenges—such as unauthorized
-    controller access and mid-flight command hijacking—that must be 
-    identified and mitigated early.
-   This project bridges applied engineering, cybersecurity research, and 
-    real-world use cases, demonstrating both the capabilities of autonomous
-    aerial systems and the importance of security-by-design in emerging 
-    smart-city deployments. The work supports informed decision-making for 
-    municipalities, educators, and industry partners while advancing practical, 
-    security-aware autonomy.
-  </p>
-   <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects" target="_blank">View Repository →</a></p>
-  <!-- Main Videos -->
-<div class="media-container video-grid">
-  <div class="video-card">
-    <video controls preload="metadata">
-      <source src="assets/video/smartcity1.mp4" type="video/mp4">
-    </video>
-  </div>
+    <section class="project" id="micro-aerial-hijacking">
+      <h2>Micro Aerial Vehicle Hijacking &amp; Swarm Security Research</h2>
+      <p class="tagline">OCII / OCAST — Published at IEEE CARS 2026, now extending to multi-drone swarm missions</p>
 
-  <div class="video-card">
-    <video controls preload="metadata">
-      <source src="assets/video/smartcity2.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
+      <p class="project-summary">
+        Applied full-stack engineering and security research to autonomous drone agents,
+        examining command-and-control behavior, safety boundaries, and recovery under
+        adversarial conditions. This work is part of an OCAST-supported initiative led by OCII
+        to position Tulsa as a regional hub for unmanned aerial systems and smart-city
+        technology, and examines the risks introduced by compromised command-and-control
+        channels as drone operations move into urban, multi-drone environments.
+      </p>
 
-<!-- Expandable Sections -->
-  
+      <p class="project-summary">
+        The project follows a complete security-research arc. I identified an
+        application-layer vulnerability in the Crazyflie control protocol that allows multiple
+        radios to establish simultaneous command authority over a single drone, then built a
+        working proof-of-concept exploit that hijacks an active flight mid-mission via
+        high-frequency command injection. In response, I designed a real-time anomaly detector
+        that flags kinematic deviations from expected flight behavior, and generalized the
+        approach into a Random Forest classifier achieving an F1 score of 0.906 with a 1.18%
+        false-positive rate — published as <em>"Authority Contention in Micro-UAV Command
+        Stacks"</em> at IEEE CARS 2026. Each stage of this work is detailed below.
+      </p>
 
-<details>
-  <summary><strong>Trajectory Planning Module</strong></summary>
+      <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects" target="_blank">View Repository →</a></p>
 
-  <p>
-    Built a real-time trajectory planner using Crazyflie kinematic constraints.
-    Computes optimal paths based on flight missions and integrates battery-aware
-    decision making.
-  </p>
+      <div class="media-container video-grid">
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/video/smartcity1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="video-card">
+          <video controls preload="metadata">
+            <source src="assets/video/smartcity2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
 
-  <ul>
-    <li>Waypoint-based path computation</li>
-    <li>Trajecotory modeling and visualization</li>
-  </ul>
+      <details>
+        <summary><strong>Trajectory Planning Module</strong></summary>
+        <p>
+          Built a real-time trajectory planner using Crazyflie kinematic constraints.
+          Computes optimal paths based on flight missions and integrates battery-aware
+          decision making.
+        </p>
+        <ul>
+          <li>Waypoint-based path computation</li>
+          <li>Trajectory modeling and visualization</li>
+        </ul>
+        <p class="repo-links">
+          <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Flight%20Control/trajectory%20mapping" target="_blank">
+            View Repository →
+          </a>
+        </p>
+      </details>
 
-  <p class="repo-links">
-    <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Flight%20Control/trajectory%20mapping" target="_blank">
-      View Repository →
-    </a>
-  </p>
-</details>
+      <details>
+        <summary><strong>Battery Monitoring &amp; Flight-Time Estimation</strong></summary>
+        <p>
+          Developed a predictive battery model using thrust demand, hover power, and
+          vertical and horizontal movement cost. Produces real-time remaining flight-time
+          estimates during autonomous missions.
+        </p>
+        <ul>
+          <li>Energy consumption modeling</li>
+          <li>Battery-aware trajectory validation</li>
+          <li>Live remaining flight-time estimator</li>
+        </ul>
+        <p class="repo-links">
+          <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Flight%20Control/Battery%20Monitoring" target="_blank">
+            View Repository →
+          </a>
+        </p>
+      </details>
 
-<details>
-  <summary><strong>Battery Monitoring & Flight-Time Estimation</strong></summary>
+      <details>
+        <summary><strong>Commander Hijacking Attack</strong></summary>
+        <p>
+          Discovered an application-layer vulnerability in the Crazyflie control protocol that
+          allows multiple Crazyradios to connect simultaneously. Built a modified
+          MotionCommander and HighLevelCommander enabling an attacker controller to override
+          legitimate flight commands through high-frequency packet injection.
+        </p>
+        <ul>
+          <li>Modified Crazyflie client to accept multiple radios</li>
+          <li>Attacker injects rapid spoofed commands mid-flight</li>
+          <li>Drone redirects to attacker-selected coordinates</li>
+        </ul>
+        <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Hijacking%20Simulation/hacked_cflib" target="_blank">View Repository →</a></p>
+      </details>
 
-  <p>
-    Developed a predictive battery model using thrust demand, hover power, and
-    vertical and horizontal movement cost. Produces real-time remaining flight-time
-    estimates during autonomous missions.
-  </p>
+      <details>
+        <summary><strong>Anomaly Detection &amp; Telemetry Monitoring</strong></summary>
+        <p>
+          Developed a real-time anomaly detector comparing actual telemetry against expected
+          trajectories. Flags deviations created by hijacking events and produces logs for
+          post-flight analysis.
+        </p>
+        <ul>
+          <li>Deviation thresholds based on kinematic expectations</li>
+          <li>System failure and data loss detection</li>
+          <li>Live telemetry comparison</li>
+        </ul>
+        <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Anomaly%20Detection" target="_blank">View Repository →</a></p>
+      </details>
 
-  <ul>
-    <li>Energy consumption modeling</li>
-    <li>Battery-aware trajectory validation</li>
-    <li>Live remaining flight-time estimator</li>
-  </ul>
+      <h3>Next Phase: Multi-Drone Swarm Generalization</h3>
 
-  <p class="repo-links">
-    <a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Flight%20Control/Battery%20Monitoring" target="_blank">
-      View Repository →
-    </a>
-  </p>
-</details>
+      <p class="project-summary">
+        The next phase extends this research to multi-drone swarm delivery missions,
+        generalizing detection across new drones, new delivery paths, and new drone pairings.
+        It's being built on a stack chosen deliberately for production relevance:
+      </p>
 
+      <ul>
+        <li><strong>ROS 2</strong> — multi-drone telemetry pipeline, MCAP-format flight recording, Foxglove-based visualization and analysis</li>
+        <li><strong>Applied ML</strong> — Python, scikit-learn, and PyTorch with CUDA-accelerated training, comparing Random Forest, XGBoost, and sequence-model architectures against the published detection baseline</li>
+        <li><strong>Rust</strong> — a real-time, memory-safe command-validation layer integrated at the ROS 2 command interface</li>
+        <li><strong>Dedicated ML workstation</strong> — AMD Threadripper PRO 7975WX, 256GB RAM, RTX 5090 (32GB), Ubuntu 24.04</li>
+      </ul>
 
-  <details>
-    <summary><strong>Commander Hijacking Attack</strong></summary>
-    <p>
-      Discovered an application-layer vulnerability in the Crazyflie control protocol that allows multiple Crazyradios
-      to connect simultaneously. Built a hacked MotionCommander and HighLevelCommander enabling an attacker controller 
-      to override the legitimate flight commands through high-frequency packet injection.
-    </p>
-    <ul>
-      <li>Modified Crazyflie client to accept multiple radios</li>
-      <li>Attacker injects rapid spoofed commands mid-flight</li>
-      <li>Drone redirects to attacker-selected coordinates</li>
-    </ul>
-    
-      <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Hijacking%20Simulation/hacked_cflib" target="_blank">View Repository →</a></p>
-    
-  </details>
+      <p class="project-summary" style="font-style: italic;">
+        Status: active data collection and pipeline development, building directly on the
+        published CARS 2026 results above.
+      </p>
+    </section>
 
-  <details>
-    <summary><strong>Anomaly Detection & Telemetry Monitoring</strong></summary>
-    <p>
-      Developed a real-time anomaly detector comparing actual telemetry against expected trajectories.
-      Flags deviations created by hijacking events and produces logs for post-flight analysis.
-    </p>
-    <ul>
-      <li>Deviation thresholds based on kinematic expectations</li>
-      <li>System failure and data loss detection</li>
-      <li>Live telemetry comparison</li>
-    </ul>
-     <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects/tree/main/Drones/Crazyflie/Anomaly%20Detection" target="_blank">View Repository →</a></p>
-    
-  </details>
+    <section class="project" id="phishing-detection-analytics">
+      <h2>Phishing Detection Game (Godot Arcade + Web Analytics Platform)</h2>
+      <p class="project-links">
+        <a href="https://ocii.itch.io/catchthephish"
+           target="_blank"
+           rel="noopener"
+           class="button">
+          ▶ Play on itch.io
+        </a>
+      </p>
 
-  <!-- Button Row -->
-  <p class="project-links">
-    
-  </p>
-</section>
-<section class="project" id="phishing-detection-analytics">
-  <h2>Phishing Detection Game (Godot Arcade + Web Analytics Platform)</h2>
-    <p class="project-links">
-    <a href="https://ocii.itch.io/catchthephish"
-   target="_blank"
-   rel="noopener"
-   class="button">
-  ▶ Play on itch.io
-</a>
-  
-  </p>
+      <p class="project-summary">
+        Beyond security research, I build software that ships and gets used. This Godot-based
+        educational arcade game teaches phishing detection to middle and high school students,
+        exportable to desktop and HTML5, with a custom real-time analytics system built in
+        Node.js, Express, and MongoDB. Gameplay events stream to a live dashboard measuring
+        learning outcomes, difficulty progression, and performance trends. Developed as part
+        of a state-level cybersecurity education initiative supported by OCII and aligned with
+        OCAST innovation goals, the game has been showcased at the Oklahoma Summit and the OKC
+        Innovation event, and deployed in Oklahoma classrooms as part of OCII's cybersecurity
+        curriculum.
+      </p>
 
-  <!-- Summary -->
-  <p class="project-summary">
-    A Godot-based educational arcade game designed to teach phishing
-    detection to middle and high school students. The game is 
-    exportable to desktop and HTML5 and features a custom real-time 
-    analytics system built with Node.js, Express, and MongoDB. Gameplay 
-    events are streamed to a live dashboard to measure learning outcomes, 
-    difficulty progression, and user performance trends.
-    Developed as part of a state-level cybersecurity education initiative 
-    supported by the Oklahoma Cyber Innovation Institute and aligned with 
-    OCAST innovation goals, this project combines interactive gameplay with
-    real-world cybersecurity concepts. It has been showcased at major 
-    technology events including the Oklahoma Summit and the OKC Innovation
-    event and deployed in Oklahoma classrooms as part of OCII’s cybersecurity
-    curriculum. The project demonstrates my ability to deliver engaging, 
-    full-stack educational software with measurable impact on awareness and 
-    learning outcomes.
-  </p>
+      <div class="media-container">
+        <div class="image-wrapper" data-caption="Students using the desktop version">
+          <img src="assets/images/phishing5.jpg"
+               alt="Booker T. Washington students using the desktop version"
+               title="Desktop Version"
+               class="project-image"
+               style="width:23%;">
+        </div>
+        <div class="image-wrapper" data-caption="Analytics Dashboard">
+          <img src="assets/images/phishing4.jpg"
+               alt="Analytics Dashboard"
+               title="Analytics Dashboard"
+               class="project-image"
+               style="width:45%;">
+        </div>
+        <div class="image-wrapper" data-caption="58th Oklahoma Summit">
+          <img src="assets/images/phishing1.jpg"
+               alt="Phishing Game at the 58th Oklahoma Summit"
+               title="Phishing Game at the 58th Oklahoma Summit"
+               class="project-image"
+               style="width:23%;">
+        </div>
+      </div>
 
-  <!-- Images -->
-  <div class="media-container">
-      <img src="assets/images/phishing5.jpg"
-       alt="BookerTWashingto school students using the desktop version"
-       title="Desktop Version"
-       class="project-image"
-       style="width:23%;">
+      <details>
+        <summary><strong>Game Design &amp; Implementation</strong></summary>
+        <p>
+          The game is built in Godot and designed for both arcade cabinet deployment and
+          standard desktop browsers. It scales difficulty based on the player's accuracy and
+          reaction time while introducing increasingly sophisticated phishing patterns, domain
+          spoofing cues, and timing pressure.
+        </p>
+        <ul>
+          <li>Godot 4.x engine</li>
+          <li>Dynamic difficulty adjustment</li>
+          <li>Phishing pattern generation system</li>
+          <li>Both desktop and HTML5 export supported</li>
+        </ul>
+        <p><a href="https://github.com/fatemehazam-crypto/phishing-game" target="_blank">Source Code →</a></p>
+      </details>
 
-  <img src="assets/images/phishing4.jpg"
-       alt="Analytics Dashboard"
-       title="Analytics Dashboard"
-       class="project-image"
-       style="width:45%;">
+      <details>
+        <summary><strong>Real-Time Analytics Architecture</strong></summary>
+        <p>
+          The HTML5-exported Godot build communicates directly with a backend analytics
+          service running on an Ubuntu server. All gameplay events — choices, mistakes,
+          response times, difficulty transitions, session data — are logged in real time and
+          can be inspected through a dashboard.
+        </p>
 
-  <img src="assets/images/phishing1.jpg"
-       alt="Phishing Game at the 58th Oklahoma Summit"
-       title="Phishing Game at the 58th Oklahoma Summit"
-       class="project-image"
-       style="width:23%;">
-    
-  </div>
+        <h4>Client-to-Server Event Streaming</h4>
+        <ul>
+          <li>Godot Web export uses a JavaScript bridge for HTTP requests</li>
+          <li>Events POSTed to an Express API</li>
+          <li>Stored in MongoDB for aggregation, dashboards, and long-term studies</li>
+        </ul>
 
-  <details>
-    <summary><strong>Game Design & Implementation</strong></summary>
-    <p>
-      The game is built in Godot and designed for both arcade cabinet deployment and standard desktop browsers. 
-      It scales difficulty based on the player's accuracy and reaction time while introducing increasingly sophisticated 
-      phishing patterns, domain spoofing cues, and timing pressure.
-    </p>
-    <ul>
-      <li>Godot 4.x engine</li>
-      <li>Dynamic difficulty adjustment</li>
-      <li>Phishing pattern generation system</li>
-      <li>Both desktop and HTML5 export supported</li>
-    </ul>
-    <p><a href="https://github.com/fatemehazam-crypto/phishing-game" target="_blank">Source Code →</a></p>
-  </details>
+        <h4>Server Stack</h4>
+        <ul>
+          <li>Node.js v24.9.0</li>
+          <li>Express.js API server</li>
+          <li>MongoDB with indexed event collections</li>
+          <li>Ubuntu cloud server (self-hosted)</li>
+        </ul>
 
-  <details>
-    <summary><strong>Real-Time Analytics Architecture</strong></summary>
-    <p>
-      The HTML5-exported Godot build communicates directly with a backend analytics service running on an Ubuntu server. 
-      All gameplay events—choices, mistakes, response times, difficulty transitions, session data—are logged in real time 
-      and can be inspected through a dashboard.
-    </p>
+        <h4>Analytics Dashboard</h4>
+        <ul>
+          <li>Web-based dashboard built with vanilla HTML, JS, and REST</li>
+          <li>Tracks accuracy, response time, phishing detection type, and level progression</li>
+          <li>Real-time charts for educators and researchers</li>
+          <li>Supports classroom monitoring and long-term analytics</li>
+        </ul>
+      </details>
 
-    <h4>📡 Client-to-Server Event Streaming</h4>
-    <ul>
-      <li>Godot Web export uses JavaScript bridge for HTTP requests</li>
-      <li>Events POSTed to Express API</li>
-      <li>Stored in MongoDB for aggregation, dashboards, and long-term studies</li>
-    </ul>
+      <details>
+        <summary><strong>System Architecture Overview</strong></summary>
+        <p><strong>Godot Game → HTML5 Export</strong> (runs inside browser)</p>
+        <p><strong>Analytics JS Module</strong> embedded inside the exported HTML</p>
+        <p><strong>Node.js/Express Backend</strong> hosted on Ubuntu</p>
+        <p><strong>MongoDB Database</strong> storing gameplay events</p>
+        <p><strong>Web Dashboard</strong> reading aggregated metrics</p>
 
-    <h4>🖥 Server Stack</h4>
-    <ul>
-      <li>Node.js v24.9.0</li>
-      <li>Express.js API server</li>
-      <li>MongoDB with indexed event collections</li>
-      <li>Ubuntu cloud server (self-hosted)</li>
-    </ul>
+        <h4>Workflow</h4>
+        <ol>
+          <li>Player interacts with the Godot game inside the browser.</li>
+          <li>Game sends JSON events to an Express endpoint.</li>
+          <li>Server validates and stores events in MongoDB.</li>
+          <li>Dashboard queries the analytics API and visualizes the data.</li>
+        </ol>
 
-    <h4>📊 Analytics Dashboard</h4>
-    <ul>
-      <li>Web-based dashboard built using vanilla HTML, JS, and REST</li>
-      <li>Tracks accuracy, response time, phishing detection type, level progression</li>
-      <li>Realtime charts for educators & researchers</li>
-      <li>Supports classroom monitoring and long-term analytics</li>
-    </ul>
+        <p><em>
+          This setup is designed to later support multiplayer, leaderboards, ML-based
+          difficulty tuning, or classroom-wide telemetry.
+        </em></p>
+      </details>
 
-  </details>
-
-  <details>
-    <summary><strong>System Architecture Overview</strong></summary>
-    <p><strong>✔ Godot Game → HTML5 Export</strong> (runs inside browser)</p>
-    <p><strong>✔ Analytics JS Module</strong> embedded inside the exported HTML</p>
-    <p><strong>✔ Node.js/Express Backend</strong> hosted on Ubuntu</p>
-    <p><strong>✔ MongoDB Database</strong> storing gameplay events</p>
-    <p><strong>✔ Web Dashboard</strong> reading aggregated metrics</p>
-
-    <h4>Workflow</h4>
-    <ol>
-      <li>Player interacts with the Godot game inside browser.</li>
-      <li>Game sends JSON events to Express endpoint.</li>
-      <li>Server validates & stores events in MongoDB.</li>
-      <li>Dashboard queries analytics API and visualizes the data.</li>
-    </ol>
-
-    <p><em>
-      This setup is designed to later support multiplayer, leaderboards, 
-      machine-learning–based difficulty tuning, or classroom-wide telemetry.
-    </em></p>
-  </details>
-
-  <details>
-    <summary><strong>Planned Extensions</strong></summary>
-    <ul>
-      <li>Adaptive ML-based difficulty prediction</li>
-      <li>Teacher dashboard with student-by-student progress</li>
-      <li>Expanded phishing dataset with generative phishing examples</li>
-      <li>Integration with your smart-city and IoT education modules</li>
-    </ul>
-  </details>
-
-
-</section>
-    <section class="project" id="work-in-progress">
-  <h2>In-Progress Work: Rust-Based Secure Commander Middleware for Drone Fleets</h2>
-  <p class="tagline">
-    Building a high-performance Rust security gateway that prevents command-injection and hijacking attacks in autonomous drone fleets.
-  </p>
-     <!-- Images -->
-  <div class="media-container">
-      <img src="assets/images/smartcity3.png"
-       alt="Secure Rust Commander Middleware for Crazyflie"
-       title="Secure Rust Commander Middleware for Crazyflie"
-       class="project-image"
-       style="width:80%;">
-  </div>
-  <details>
-    <summary><strong>Overview</strong></summary>
-    <p>
-      In modern smart-city operations, drones manage real-time traffic monitoring, inspections, and emergency response. 
-      However, these systems are vulnerable: attackers can inject malicious flight commands through radio links, causing 
-      route deviations, stalling missions, or forcing unsafe maneuvers.
-    </p>
-    <p>
-      Existing drone control frameworks—such as Python’s <code>cflib</code> used for Crazyflie drones—often lack rigorous,
-      real-time command validation. This project introduces a Rust-based security middleware designed to eliminate that gap.
-    </p>
-  </details>
-
-  <details>
-    <summary><strong>The Solution</strong></summary>
-    <p>
-      I am architecting and developing a secure command-validation middleware that acts as a mandatory gateway between 
-      ground-control applications and physical drones. The middleware validates every command before it ever reaches the aircraft,
-      ensuring authenticity, integrity, and mission-level safety.
-    </p>
-  </details>
-
-  <details>
-    <summary><strong>Technical Approach & Architecture</strong></summary>
-    
-    <h4>Security as a Sidecar</h4>
-    <p>
-      The middleware is implemented as a standalone Rust service (“sidecar”) that intercepts all outbound flight commands. 
-      This allows seamless integration with existing Python-based controllers (<code>cflib</code>) without requiring 
-      major code changes.
-    </p>
-
-    <h4>Multi-Layer Command Validation</h4>
-    <ul>
-      <li>CRC and packet-integrity verification</li>
-      <li>Commander ID and source-authorization checks</li>
-      <li>Cryptographic signatures ensuring command authenticity</li>
-    </ul>
-
-    <h4>Attack Mitigation</h4>
-    <ul>
-      <li>Real-time rate limiting to prevent command flooding</li>
-      <li>Rules engine to detect suspicious patterns and unauthorized waypoint changes</li>
-      <li>Trajectory-aware anomaly detection for off-path maneuvers</li>
-    </ul>
-
-    <h4>Why Rust?</h4>
-    <p>
-      Rust is used to guarantee memory safety, eliminate buffer-overflow vulnerabilities, and provide fearless concurrency 
-      for managing multiple drone connections in parallel. The middleware is designed for high reliability, predictable latency, 
-      and safe integration with real-time flight operations.
-    </p>
-  </details>
-
-  <details>
-  <summary><strong>Planned Extensions</strong></summary>
-  <ul>
-    <li>Integration with my existing hijacking-simulation framework</li>
-  </ul>
-</details>
-</section> <!-- closes the Rust project section -->
+      <details>
+        <summary><strong>Planned Extensions</strong></summary>
+        <ul>
+          <li>Adaptive ML-based difficulty prediction</li>
+          <li>Teacher dashboard with student-by-student progress</li>
+          <li>Expanded phishing dataset with generative phishing examples</li>
+          <li>Integration with smart-city and IoT education modules</li>
+        </ul>
+      </details>
+    </section>
 
   </main>
-</div>
+  </div>
+</body>
+</html>
