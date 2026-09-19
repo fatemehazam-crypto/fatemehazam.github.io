@@ -257,15 +257,21 @@ title: Portfolio
       <h3>Next Phase: Multi-Drone Swarm Generalization</h3>
 
       <p class="project-summary">
-        The next phase extends this research to multi-drone swarm delivery missions,
-        generalizing detection across new drones, new delivery paths, and new drone pairings.
-        It's being built on a stack chosen deliberately for production relevance:
+        The next phase extends this research to multi-drone swarm delivery missions, generalizing
+        detection across new drones, new delivery paths, and new drone pairings — not just held-out
+        samples. Mid-project trial data surfaced a finding that reshaped the detection design: the
+        attacker's radio connecting to the target — before any command is sent — is itself measurably
+        detectable, seconds ahead of any kinematic deviation. That led to a two-signal architecture:
+        an early link-quality/radio-presence signal, confirmed by a kinematic and trajectory-residual
+        signal once takeover commands begin. It's being built on a stack chosen deliberately for 
+        production relevance:
       </p>
 
       <ul>
-        <li><strong>ROS 2</strong> — multi-drone telemetry pipeline, MCAP-format flight recording, Foxglove-based visualization and analysis</li>
-        <li><strong>Applied ML</strong> — Python, scikit-learn, and PyTorch with CUDA-accelerated training, comparing Random Forest, XGBoost, and sequence-model architectures against the published detection baseline</li>
-        <li><strong>Rust</strong> — a real-time, memory-safe command-validation layer integrated at the ROS 2 command interface</li>
+        <li><strong>Data Collection Pipeline</strong> — Python/cflib mission control and attack simulation, MQTT telemetry publish, JSON-based mission profiles generated from a city layout config</li>
+        <li><strong>ROS 2 &amp; Telemetry</strong> — multi-drone bridge, MCAP-format flight recording via ros2 bag, Foxglove-based visualization and analysis</li>
+        <li><strong>Applied ML</strong> — Python, scikit-learn, XGBoost, and PyTorch with CUDA-accelerated training; Optuna for hyperparameter search and MLflow for experiment tracking; Random Forest, XGBoost, and sequence-model architectures compared against the published detection baseline via leave-one-drone-out and leave-one-mission-out validation</li>
+        <li><strong>Rust Detection Node</strong> — real-time, memory-safe inference via rclrs and ONNX Runtime, publishing alerts back onto the ROS 2 graph</li>
         <li><strong>Dedicated ML workstation</strong> — AMD Threadripper PRO 7975WX, 256GB RAM, RTX 5090 (32GB), Ubuntu 24.04</li>
       </ul>
 
