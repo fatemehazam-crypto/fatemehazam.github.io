@@ -64,11 +64,13 @@ title: Portfolio
         I am a software engineer and security researcher at the Oklahoma Cyber Innovation
         Institute (OCII), University of Tulsa, where I design, build, and evaluate real-world
         systems at the intersection of applied machine learning, cybersecurity, and autonomous
-        systems. My research identified and demonstrated a command-hijacking vulnerability in
-        autonomous drone control protocols, and produced the detection system that addresses
-        it — published at IEEE CARS 2026. Alongside this research, I build the full-stack
-        platforms, RF sensor networks, and embedded infrastructure that carry this work from
-        the lab into deployable, real-world systems.
+        systems. My research identified and demonstrated a security gap in how autonomous drone
+        control protocols resolve conflicting commands, and developed a detection system to 
+        address it — published at IEEE CARS 2026.Alongside this research, I design and build the
+        full-stack platforms, RF sensor networks, and embedded infrastructure that power the 
+        testbed — translating experimental protocols into deployable, real-world systems.
+
+
       </p>
     </section>
 
@@ -97,12 +99,13 @@ title: Portfolio
       </p>
 
       <ul>
+        <li>Deployed on a physical smart-city testbed as the primary research instrument for an RF interference study assessment detailed below</li>
         <li>React frontend with live sensor dashboards, RF disruption analysis, and drone flight-path visualization on an HTML5 canvas</li>
         <li>Node.js backend with MQTT ingestion, Socket.io broadcast, a REST API, and persistent SQLite storage</li>
-        <li>Event-driven architecture processing multi-band RF sensor data across 7 physical nodes in real time</li>
+        <li>Event-driven architecture processing multi-band RF sensor data across multiple physical nodes in real time</li>
         <li>RF jamming detection pipeline classifying disruption type, packet loss rate, and transmission-rhythm anomalies</li>
-        <li>Crazyflie drone telemetry integration with ROS 2 output and automated MCAP flight recording</li>
-        <li>Deployed on a physical smart-city testbed as the primary research instrument for the collateral-damage assessment study detailed below</li>
+        <li>Drone telemetry integration with ROS 2 output and automated MCAP flight recording</li>
+        
       </ul>
 
       <p class="project-summary">
@@ -149,15 +152,21 @@ title: Portfolio
       </p>
 
       <p class="project-summary">
-        The project follows a complete security-research arc. I identified an
-        application-layer vulnerability in the Crazyflie control protocol that allows multiple
-        radios to establish simultaneous command authority over a single drone, then built a
-        working proof-of-concept exploit that hijacks an active flight mid-mission via
-        high-frequency command injection. In response, I designed a real-time anomaly detector
-        that flags kinematic deviations from expected flight behavior, and generalized the
-        approach into a Random Forest classifier achieving an F1 score of 0.906 with a 1.18%
-        false-positive rate — published as <em>"Authority Contention in Micro-UAV Command
-        Stacks"</em> at IEEE CARS 2026. Each stage of this work is detailed below.
+        The project follows a complete security-research arc. I conducted an 
+        architectural analysis of a class of micro-UAV command stacks, 
+        identifying design assumptions in the Crazyflie control protocol — 
+        such as trusting client-side connection state and resolving command
+        authority by packet arrival timing — that allow multiple radios to 
+        establish simultaneous command authority over a single drone. Building 
+        on this analysis, I implemented a modified flight commander and 
+        demonstrated a working proof-of-concept that hijacks an active flight 
+        mid-mission via high-frequency command injection. In response, I designed 
+        a real-time anomaly detector that flags kinematic deviations from expected 
+        flight behavior, and generalized the approach into a Random Forest classifier
+        achieving an F1 score of 0.906 with a 1.18% false-positive rate — accepted
+        as "Authority Contention in Micro-UAV Command Stacks" at IEEE CARS 2026. 
+        Each stage of this work is detailed below. (Publication detail will be 
+        linked after the conference.)
       </p>
 
       <p><a href="https://github.com/fatemehazam-crypto/Smart-City-Projects" target="_blank">View Repository →</a></p>
@@ -215,10 +224,12 @@ title: Portfolio
       <details>
         <summary><strong>Commander Hijacking Attack</strong></summary>
         <p>
-          Discovered an application-layer vulnerability in the Crazyflie control protocol that
-          allows multiple Crazyradios to connect simultaneously. Built a modified
-          MotionCommander and HighLevelCommander enabling an attacker controller to override
-          legitimate flight commands through high-frequency packet injection.
+          Conducted an architectural analysis of the Crazyflie control protocol,
+          identifying that it permits multiple Crazyradios to connect and 
+          establish command authority simultaneously. Built a modified 
+          MotionCommander and HighLevelCommander demonstrating that an attacker 
+          controller can override legitimate flight commands through 
+          high-frequency packet injection.
         </p>
         <ul>
           <li>Modified Crazyflie client to accept multiple radios</li>
