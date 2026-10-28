@@ -14,8 +14,8 @@ linkedin_url: "https://www.linkedin.com/in/fatemeh-azam-1a219b55/"
 email: "Fatemeh-azam@utulsa.edu"
 
 # Your existing files. Paths are unchanged from the previous site.
-resume_file: /assets/Resume_.pdf
-headshot: /assets/images/headshot.JPG
+resume_file: assets/Resume_.pdf
+headshot: assets/images/headshot.JPG
 
 links:
   catch_the_phish: "https://ocii.itch.io/catchthephish"
