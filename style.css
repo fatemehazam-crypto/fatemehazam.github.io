@@ -423,3 +423,37 @@ summary:hover { color: var(--accent); }
 @media print {
   .sidebar nav, .skip { display: none; }
 }
+/* ======================================
+   DRONE DETAILS: comparison, table, code links
+   (paste at the end of style.css)
+====================================== */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.compare > div {
+  padding: 1.1rem 1.2rem; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.compare-pick { border-color: var(--accent-line) !important; background: linear-gradient(180deg, rgba(56,189,248,.10), var(--surface)) !important; }
+.compare h4 { font-size: .98rem; font-weight: 600; margin: 0 0 .6rem; color: var(--text); }
+.compare ul { display: grid; gap: .35rem; }
+.compare li { position: relative; padding-left: 1rem; color: var(--muted); font-size: .9rem; }
+.compare li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--faint); }
+.compare-pick li::before { background: var(--accent); }
+.compare-time { margin-top: .9rem; padding-top: .7rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
+.compare-time strong { color: var(--text); font-size: 1.05rem; }
+.compare-pick .compare-time strong { color: var(--accent); }
+
+.mini-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .92rem; }
+.mini-table th { text-align: left; color: var(--faint); font-weight: 500; font-size: .82rem; padding: 0 .75rem .5rem 0; border-bottom: 1px solid var(--border-strong); }
+.mini-table td { padding: .65rem .75rem .65rem 0; border-bottom: 1px solid var(--border); color: #c9d2dd; vertical-align: top; }
+.pill { display: inline-block; white-space: nowrap; font-size: .78rem; font-weight: 600; padding: .12rem .55rem; border-radius: 999px; margin-right: .3rem; }
+.pill-red { color: #f87171; background: rgba(248,113,113,.12); }
+.pill-amber { color: var(--amber); background: var(--amber-soft); }
+.pill-green { color: var(--green); background: var(--green-soft); }
+
+.details-body code { font-size: .88em; padding: .08rem .35rem; border-radius: 5px; background: var(--surface-2); color: var(--text); }
+.code-links { margin-top: 1rem; font-size: .88rem; color: var(--faint); }
+
+@media (max-width: 640px) {
+  .compare { grid-template-columns: 1fr; }
+  .mini-table td:first-child { width: 55%; }
+}
