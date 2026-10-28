@@ -385,6 +385,41 @@ summary:hover { color: var(--accent); }
 .site-footer { color: var(--faint); font-size: .85rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
 
 /* ======================================
+   DRONE DETAILS: comparison, table, code links
+   (paste at the end of style.css)
+====================================== */
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+.compare > div {
+  padding: 1.1rem 1.2rem; border-radius: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+}
+.compare-pick { border-color: var(--accent-line) !important; background: linear-gradient(180deg, rgba(56,189,248,.10), var(--surface)) !important; }
+.compare h4 { font-size: .98rem; font-weight: 600; margin: 0 0 .6rem; color: var(--text); }
+.compare ul { display: grid; gap: .35rem; }
+.compare li { position: relative; padding-left: 1rem; color: var(--muted); font-size: .9rem; }
+.compare li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--faint); }
+.compare-pick li::before { background: var(--accent); }
+.compare-time { margin-top: .9rem; padding-top: .7rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
+.compare-time strong { color: var(--text); font-size: 1.05rem; }
+.compare-pick .compare-time strong { color: var(--accent); }
+
+.mini-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .92rem; }
+.mini-table th { text-align: left; color: var(--faint); font-weight: 500; font-size: .82rem; padding: 0 .75rem .5rem 0; border-bottom: 1px solid var(--border-strong); }
+.mini-table td { padding: .65rem .75rem .65rem 0; border-bottom: 1px solid var(--border); color: #c9d2dd; vertical-align: top; }
+.pill { display: inline-block; white-space: nowrap; font-size: .78rem; font-weight: 600; padding: .12rem .55rem; border-radius: 999px; margin-right: .3rem; }
+.pill-red { color: #f87171; background: rgba(248,113,113,.12); }
+.pill-amber { color: var(--amber); background: var(--amber-soft); }
+.pill-green { color: var(--green); background: var(--green-soft); }
+
+.details-body code { font-size: .88em; padding: .08rem .35rem; border-radius: 5px; background: var(--surface-2); color: var(--text); }
+.code-links { margin-top: 1rem; font-size: .88rem; color: var(--faint); }
+
+@media (max-width: 640px) {
+  .compare { grid-template-columns: 1fr; }
+  .mini-table td:first-child { width: 55%; }
+}
+
+/* ======================================
    RESPONSIVE
 ====================================== */
 @media (max-width: 960px) {
@@ -423,37 +458,91 @@ summary:hover { color: var(--accent); }
 @media print {
   .sidebar nav, .skip { display: none; }
 }
+
 /* ======================================
-   DRONE DETAILS: comparison, table, code links
-   (paste at the end of style.css)
+   NOW & NEXT PANEL
+   Wide screens: sticky right-hand column.
+   Narrower: a slim bar under the intro that expands on tap.
 ====================================== */
-.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
-.compare > div {
-  padding: 1.1rem 1.2rem; border-radius: 12px;
-  background: var(--surface); border: 1px solid var(--border);
+.rail { margin: -1.5rem 0 3rem; }
+
+.rail-panel {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--accent-line);
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
 }
-.compare-pick { border-color: var(--accent-line) !important; background: linear-gradient(180deg, rgba(56,189,248,.10), var(--surface)) !important; }
-.compare h4 { font-size: .98rem; font-weight: 600; margin: 0 0 .6rem; color: var(--text); }
-.compare ul { display: grid; gap: .35rem; }
-.compare li { position: relative; padding-left: 1rem; color: var(--muted); font-size: .9rem; }
-.compare li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: var(--faint); }
-.compare-pick li::before { background: var(--accent); }
-.compare-time { margin-top: .9rem; padding-top: .7rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .88rem; }
-.compare-time strong { color: var(--text); font-size: 1.05rem; }
-.compare-pick .compare-time strong { color: var(--accent); }
+.rail-panel summary { padding: .9rem 1.1rem; }
+.rail-title { display: inline-flex; align-items: center; gap: .55rem; font-weight: 700; font-size: .98rem; }
+.rail-peek { margin-left: auto; color: var(--muted); font-weight: 500; font-size: .85rem; }
 
-.mini-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: .92rem; }
-.mini-table th { text-align: left; color: var(--faint); font-weight: 500; font-size: .82rem; padding: 0 .75rem .5rem 0; border-bottom: 1px solid var(--border-strong); }
-.mini-table td { padding: .65rem .75rem .65rem 0; border-bottom: 1px solid var(--border); color: #c9d2dd; vertical-align: top; }
-.pill { display: inline-block; white-space: nowrap; font-size: .78rem; font-weight: 600; padding: .12rem .55rem; border-radius: 999px; margin-right: .3rem; }
-.pill-red { color: #f87171; background: rgba(248,113,113,.12); }
-.pill-amber { color: var(--amber); background: var(--amber-soft); }
-.pill-green { color: var(--green); background: var(--green-soft); }
+.live-dot {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, .6);
+  animation: pulse 2.4s ease-out infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .55); }
+  70% { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .live-dot { animation: none; } }
 
-.details-body code { font-size: .88em; padding: .08rem .35rem; border-radius: 5px; background: var(--surface-2); color: var(--text); }
-.code-links { margin-top: 1rem; font-size: .88rem; color: var(--faint); }
+.rail-body { padding: 0 1.1rem 1.1rem; }
+.rail-h {
+  font-size: .78rem; font-weight: 600; color: var(--faint);
+  margin: 1.1rem 0 .55rem; padding-top: .9rem; border-top: 1px solid var(--border);
+}
+.rail-body > .rail-h:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 
-@media (max-width: 640px) {
-  .compare { grid-template-columns: 1fr; }
-  .mini-table td:first-child { width: 55%; }
+.rail-news { display: grid; gap: .6rem; }
+.rail-news li { display: grid; gap: .1rem; }
+.rail-news time { color: var(--accent); font-size: .76rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.rail-news a { color: var(--text); font-size: .86rem; line-height: 1.45; }
+.rail-news a:hover { color: var(--accent); text-decoration: none; }
+
+.rail-list { display: grid; gap: .35rem; }
+.rail-list a {
+  display: grid; gap: .15rem;
+  padding: .55rem .65rem .55rem 1.35rem; margin: 0 -.65rem;
+  border-radius: 9px; position: relative;
+}
+.rail-list a::before {
+  content: ""; position: absolute; left: .55rem; top: 1.05rem;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--amber);
+}
+.rail-list .is-active a::before { background: var(--green); }
+.rail-list a:hover { background: var(--surface-2); text-decoration: none; }
+.rail-list strong { color: var(--text); font-size: .88rem; font-weight: 600; line-height: 1.35; }
+.rail-list span { color: var(--muted); font-size: .8rem; line-height: 1.45; }
+
+/* Wide screens: three columns, panel always open and sticky */
+@media (min-width: 1300px) {
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    column-gap: 2.75rem;
+    max-width: 1320px;
+    align-content: start;
+  }
+  main > * { grid-column: 1; }
+  .rail {
+    grid-column: 2; grid-row: 1 / span 40;
+    align-self: start;
+    position: sticky; top: 1.25rem;
+    margin: .4rem 0 0;
+    max-height: calc(100vh - 2.5rem); overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .rail-panel summary { pointer-events: none; }
+  .rail-panel summary::after, .rail-peek { display: none; }
+  .thesis { max-width: 16ch; }
+  .rail-panel summary { padding: .8rem 1rem .4rem; }
+  .rail-body { padding: 0 1rem .9rem; }
+  .rail-h { margin: .75rem 0 .4rem; padding-top: .7rem; }
+  .rail-news { gap: .45rem; }
+  .rail-list { gap: .1rem; }
+  .rail-list a { padding: .4rem .6rem .4rem 1.3rem; }
+  .rail-list a::before { top: .9rem; }
 }
