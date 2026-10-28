@@ -254,21 +254,56 @@ title: Fatemeh Azam
           </video>
         </figure>
       </div>
-
       <details>
-        <summary>Delivery missions and trajectory planning</summary>
+        <summary>Delivery missions: two ways to fly the same route</summary>
         <div class="details-body">
           <p>
-            Drones fly grid-aligned delivery routes in parallel, following "streets" through the testbed,
-            descending at each drop-off and returning home. The same routes can be flown waypoint by
-            waypoint, or as one smooth 7th-order polynomial trajectory that each drone flies onboard,
-            rounding corners and drop-offs without stopping. That cuts a mission from about 2 min 45 s
-            to about 1 min 15 s.
+            Each drone flies a grid-aligned delivery route through the testbed: along its "street",
+            off to each delivery point, down 0.7 m to simulate the drop-off, back up, and home to land.
+            The routes live in one mission file that every script reads, so the flight code and the
+            monitor always agree on where each drone should be. The same routes can be flown two ways:
           </p>
+
+          <div class="compare">
+            <div>
+              <h4>Waypoint by waypoint</h4>
+              <ul>
+                <li>One <code>go_to</code> command per leg</li>
+                <li>Stops and settles at every waypoint</li>
+                <li>Battery checked before every leg</li>
+                <li>Route can change mid-flight</li>
+              </ul>
+              <p class="compare-time"><strong>~2 min 45 s</strong> for drone 1's mission</p>
+            </div>
+            <div class="compare-pick">
+              <h4>Onboard trajectory</h4>
+              <ul>
+                <li>Whole route uploaded once, flown by the drone</li>
+                <li>Continuous, with smooth corners and drop-offs</li>
+                <li>Battery checked every 0.5 s while it flies</li>
+                <li>New route means a new upload</li>
+              </ul>
+              <p class="compare-time"><strong>~1 min 15 s</strong> for the same mission</p>
+            </div>
+          </div>
+
+          <ul class="points">
+            <li><strong>Smooth trajectories.</strong> Every leg is a rest-to-rest 7th-order polynomial that starts and ends with zero velocity, acceleration and jerk, so the drone rounds the grid's 90-degree corners instead of snapping between straight lines. Leg times come from a speed limit: 0.5 m/s horizontally, 0.4 m/s vertically.</li>
+            <li><strong>Checked before upload.</strong> A trajectory with a gap between segments, or one too long for the drone's 4 KB trajectory memory (31 segments), is refused before it reaches the drone. Drone 1's mission uses 19.</li>
+            <li><strong>Telemetry that never stalls the radio.</strong> Both modes log position every 600 ms to one JSON Lines file per drone. The radio callback only queues each line and a background thread writes them, so slow disk writes never hold up the link.</li>
+            <li><strong>Safety built in.</strong> A pre-flight battery check, return-to-base on a low battery, and a Ctrl+C kill switch that cuts the motors on every drone at once.</li>
+          </ul>
+
           <figure class="media media-wide">
             <img src="assets/images/delivery-trajectories.png" alt="Two drone delivery routes shown in top view, 3D, and height over time" loading="lazy">
-            <figcaption>Both delivery missions as smooth trajectories: top view, 3D, and height over time.</figcaption>
+            <figcaption>Both delivery missions as smooth trajectories: top view, 3D, and height over time, with a drop to 0.3 m at each delivery.</figcaption>
           </figure>
+          <p class="code-links">Code:
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/swarm_mission.py" target="_blank" rel="noopener">swarm_mission.py</a>,
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/fly_trajectories.py" target="_blank" rel="noopener">fly_trajectories.py</a>,
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/trajectories.py" target="_blank" rel="noopener">trajectories.py</a>,
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/missions.py" target="_blank" rel="noopener">missions.py</a>
+          </p>
         </div>
       </details>
 
@@ -276,9 +311,29 @@ title: Fatemeh Azam
         <summary>Battery monitoring and flight-time estimation</summary>
         <div class="details-body">
           <p>
-            A small library on the drone's power telemetry decides before every leg whether to keep
-            flying, return to base, or land, and refuses to take off without battery data. It estimates
-            remaining flight time from a voltage lookup table built from a recorded discharge flight.
+            A small library on the Crazyflie's power telemetry. It combines the battery voltage with
+            the firmware's own power state into one decision, checked before every leg. Its thresholds
+            come from the drone's firmware parameters, so the same code works across drones.
+          </p>
+
+          <table class="mini-table">
+            <thead><tr><th scope="col">Condition</th><th scope="col">Decision</th></tr></thead>
+            <tbody>
+              <tr><td>No battery data yet</td><td><span class="pill pill-red">Land</span> and refuse to take off</td></tr>
+              <tr><td>Voltage at critical, or firmware shutting down</td><td><span class="pill pill-red">Land now</span></td></tr>
+              <tr><td>Voltage low, or firmware in low-power mode</td><td><span class="pill pill-amber">Return to base</span></td></tr>
+              <tr><td>Everything else</td><td><span class="pill pill-green">Continue</span></td></tr>
+            </tbody>
+          </table>
+
+          <p>
+            <strong>Remaining flight time</strong> comes from one recorded discharge flight. Voltage is
+            binned to 0.01 V and each bin stores the average time left, so the current reading maps
+            straight to seconds of flight remaining. Used on its own, the monitor lands immediately on a
+            critical battery, and on a low battery once less than 30 seconds of flight are left.
+          </p>
+          <p class="code-links">Code:
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/battery_monitor.py" target="_blank" rel="noopener">battery_monitor.py</a>
           </p>
         </div>
       </details>
@@ -287,15 +342,24 @@ title: Fatemeh Azam
         <summary>Rule-based flight monitor (baseline)</summary>
         <div class="details-body">
           <p>
-            Fixed-threshold rules flag drones that leave their planned route or stop sending telemetry,
-            escalate gaps from warning to critical, and record every outage. A live map shows each
-            drone's route, track and status next to an event log. Simple, transparent rules like these
-            make a baseline to compare learned detectors against.
+            Two fixed-threshold rules, applied live to every drone. They are deliberately simple, so
+            they make a transparent baseline to compare learned detectors against.
           </p>
+          <ul class="points">
+            <li><strong>Off route.</strong> The monitor tracks which waypoint each drone should be heading to, and flags it when it is more than 0.8 m away (1.0 m on the first and last legs) or moves faster than 2 m/s between samples.</li>
+            <li><strong>Telemetry gap.</strong> Warning after 2 s without data, alarm after 4 s, critical after 8 s. Every outage is recorded with when it started, how long it took to reach critical, and how long it lasted, and can be exported to CSV.</li>
+            <li><strong>Live view.</strong> A map of each drone's planned route, recent track and status, beside a scrolling event log.</li>
+            <li><strong>A limitation, measured.</strong> Measuring distance to the next waypoint flags a drone that is exactly on route whenever a leg is longer than the tolerance: about 30% of samples in a simulated perfect flight. A second mode measures distance to the route segment instead and removes those false alarms. The original rule stays the default so earlier results remain reproducible.</li>
+            <li><strong>Testable without drones.</strong> A simulator writes realistic telemetry with injected drift and dropouts, and 28 automated tests cover the rules, the battery logic and the trajectories.</li>
+          </ul>
           <figure class="media media-wide">
             <img src="assets/images/flight-monitor.png" alt="Flight monitor map with one drone off route and one with a telemetry gap, next to an event log" loading="lazy">
-            <figcaption>The flight monitor, running on simulated telemetry.</figcaption>
+            <figcaption>The flight monitor on simulated telemetry: drone 1 has drifted off route, drone 2 has gone silent.</figcaption>
           </figure>
+          <p class="code-links">Code:
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/flight_monitor.py" target="_blank" rel="noopener">flight_monitor.py</a>,
+            <a href="{{ gh }}/crazyflie-delivery-testbed/blob/main/simulate_telemetry.py" target="_blank" rel="noopener">simulate_telemetry.py</a>
+          </p>
         </div>
       </details>
 
