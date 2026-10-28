@@ -5,32 +5,23 @@ description: >-
   Software engineer and applied security researcher. AI/LLM security,
   ML threat detection, and real-time systems.
 
-# --- Address -----------------------------------------------------------
-# The site repo must be named "fatemeh-azam.github.io" so the site is
-# served at the root address below.
+# The site repo is "fatemeh-azam.github.io", served at the root address.
 url: "https://fatemeh-azam.github.io"
 baseurl: ""
 
 github_username: fatemeh-azam
-
-# --- Contact (leave a value empty to hide it) ---------------------------
 linkedin_url: "https://www.linkedin.com/in/fatemeh-azam-1a219b55/"
 email: "Fatemeh-azam@utulsa.edu"
 
-# --- Files and outside links (empty = link hidden) ----------------------
-resume_file: /assets/Fatemeh-Azam-Resume.pdf
+# Your existing files. Paths are unchanged from the previous site.
+resume_file: /assets/Resume_.pdf
+headshot: /assets/images/headshot.JPG
+
 links:
   catch_the_phish: "https://ocii.itch.io/catchthephish"
+  thunderplains_post: "https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/"
   cars_paper: ""        # add the IEEE Xplore / DOI link when it's live
-  thunderplains: "https://www.linkedin.com/feed/update/urn:li:share:7498205526070030336/"
 
-# Screenshots already in your repo. Empty = no image.
-images:
-  smart_city_dashboard: /assets/images/smartcity4.png
-  phish_dashboard: /assets/images/phishing4.jpg
-  drone_monitor: /assets/images/flight-monitor.png
-
-# No theme: the site uses its own layout and stylesheet.
 exclude:
   - README.md
   - Gemfile

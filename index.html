@@ -1,288 +1,569 @@
 ---
-layout: default
+layout: null
+title: Fatemeh Azam
 ---
 {%- assign gh = "https://github.com/" | append: site.github_username -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fatemeh Azam | Software Engineer &amp; Security Researcher</title>
+  <meta name="description" content="Software engineer and applied security researcher at the Oklahoma Cyber Innovation Institute, University of Tulsa. AI/LLM security, ML threat detection, and real-time systems.">
+  <meta property="og:title" content="Fatemeh Azam | Software Engineer &amp; Security Researcher">
+  <meta property="og:description" content="Software engineer and applied security researcher. AI/LLM security, ML threat detection, and real-time systems.">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}/">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}{{ site.headshot }}">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
 
-<section class="hero wrap" aria-labelledby="thesis">
-  <p class="hero-name">Fatemeh Azam, software engineer and applied security researcher</p>
-  <h1 id="thesis">I turn ambiguous, real-world security problems into experiments, prototypes, and working systems.</h1>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="layout">
 
-  <dl class="focus">
-    <div>
-      <dt>AI and LLM security</dt>
-      <dd>Red-teaming and hardening local LLM pipelines against the OWASP LLM and Agentic Top 10.</dd>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="identity">
+      <img src="{{ site.headshot | relative_url }}" alt="Fatemeh Azam" class="profile-photo" width="128" height="128">
+      <div>
+        <h1>Fatemeh Azam</h1>
+        <p class="role">Software Engineer &amp; Security Researcher</p>
+        <p class="org">Oklahoma Cyber Innovation Institute<br>University of Tulsa</p>
+      </div>
     </div>
-    <div>
-      <dt>ML threat detection</dt>
-      <dd>Detectors built from real telemetry and measured against a baseline.</dd>
-    </div>
-    <div>
-      <dt>Real-time systems</dt>
-      <dd>Full-stack, event-driven platforms that run on real hardware and stay up.</dd>
-    </div>
-  </dl>
 
-  <p class="hero-meta">
-    Senior Software Engineer at the Oklahoma Cyber Innovation Institute, University of Tulsa.
-    Based in Tulsa; open to relocating to Texas or California, and to remote work.
-  </p>
+    <ul class="sidebar-links">
+      <li><a href="{{ site.resume_file | relative_url }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l6 6v14H6zM14 2v6h6M9 13h8M9 17h6"/></svg>Resume</a></li>
+      <li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4v11H4zM6 4a2 2 0 110 4 2 2 0 010-4zM10 9h4v1.6c.6-1 1.8-1.8 3.5-1.8 3 0 3.5 2 3.5 4.6V20h-4v-5.6c0-1.3 0-3-1.8-3s-2.2 1.4-2.2 2.9V20h-3z"/></svg>LinkedIn</a></li>
+      <li><a href="{{ gh }}" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 015 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>GitHub</a></li>
+      <li><a href="mailto:{{ site.email }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg>Email</a></li>
+    </ul>
 
-  <ul class="hero-links">
-    <li><a href="{{ site.resume_file | relative_url }}">Resume (PDF)</a></li>
-    <li><a href="{{ gh }}">GitHub</a></li>
-    {%- if site.linkedin_url != "" %}
-    <li><a href="{{ site.linkedin_url }}">LinkedIn</a></li>
-    {%- endif %}
-    {%- if site.email != "" %}
-    <li><a href="mailto:{{ site.email }}">Email</a></li>
-    {%- endif %}
-  </ul>
-</section>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#now">Now &amp; next</a>
+      <a href="#smart-city">Smart-City Platform</a>
+      <a href="#drone-security">Drone Security Research</a>
+      <a href="#catch-the-phish">Catch the Phish</a>
+      <a href="#reel-smart">Reel Smart</a>
+      <a href="#talks">Talks &amp; Papers</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
 
-<section class="recent wrap" aria-labelledby="recent-heading">
-  <h2 id="recent-heading" class="visually-hidden">Recent</h2>
-  <ul>
-    <li>
-      <time datetime="2026-10-26">October 26, 2026</time>
-      <span>Presented <i>Authority Contention in Micro-UAV Command Stacks</i> at IEEE CARS 2026.</span>
-    </li>
-    <li>
-      <time datetime="2026-10-21">October 21, 2026</time>
-      <span>Spoke at ThunderPlains 2026 in Oklahoma City on resilient event-driven systems, with a live demo the audience tried to break.</span>
-    </li>
-  </ul>
-</section>
+  <!-- MAIN -->
+  <main id="main">
 
-<section id="work" class="section wrap" aria-labelledby="work-heading">
-  <h2 id="work-heading">Work</h2>
-
-  <article class="project" id="smart-city">
-    <header class="project-head">
-      <h3>Smart-City RF Monitoring Platform</h3>
-      <p class="project-ctx">Oklahoma Cyber Innovation Institute, 2024 to present</p>
-    </header>
-    <div class="project-body">
-      <p>
-        A real-time platform that collects telemetry from about seven ESP32 sensor nodes spread
-        across several buildings, covering four RF bands: Wi-Fi, 433&nbsp;MHz, GPS L1/L5, and
-        LoRaWAN. Readings stream to a live dashboard. I built it end to end, from the C++
-        firmware on the sensors to the backend and the React front end.
+    <!-- ABOUT -->
+    <section id="about" class="hero">
+      <h2 class="thesis">Software engineer and applied security researcher.</h2>
+      <p class="intro">
+        I have 8+ years building backend and real-time systems. At the Oklahoma Cyber Innovation
+        Institute (OCII), University of Tulsa, I lead the research software and the platform that
+        connects hardware and software for our smart-city initiative, and I build the testbeds our
+        research questions need: sensor networks, drone fleets, live dashboards. My drone security
+        research was presented at IEEE CARS 2026. My work spans three areas:
       </p>
-      {%- if site.images.smart_city_dashboard != "" %}
-      <figure class="shot">
-        <img src="{{ site.images.smart_city_dashboard | relative_url }}" alt="The live monitoring dashboard showing sensor readings across RF bands" loading="lazy">
-        <figcaption>The live dashboard.</figcaption>
-      </figure>
-      {%- endif %}
-      <ul>
-        <li>MQTT ingestion with metric normalization across devices that each report differently; REST API, with Socket.io pushing updates to the dashboard.</li>
-        <li>Detection and classification of RF disruption.</li>
-        <li>Drone telemetry integration with ROS&nbsp;2 output and MCAP recording, plus an MJPEG video proxy and PCM audio over WebSocket.</li>
+      <div class="focus">
+        <div class="focus-item">
+          <h3>AI &amp; LLM security</h3>
+          <p>Red-teaming and hardening local LLM pipelines against the OWASP LLM and Agentic Top&nbsp;10.</p>
+        </div>
+        <div class="focus-item">
+          <h3>ML threat detection</h3>
+          <p>Detectors built from real telemetry and measured against a baseline.</p>
+        </div>
+        <div class="focus-item">
+          <h3>Real-time systems</h3>
+          <p>Full-stack, event-driven platforms that run on real hardware and stay up.</p>
+        </div>
+      </div>
+
+      <div class="stats" aria-label="Highlights">
+        <div class="stat"><strong>0.906</strong><span>F1, drone hijack detector</span></div>
+        <div class="stat"><strong>1.18%</strong><span>false positives, vs 3.55% rule-based</span></div>
+        <div class="stat"><strong>82%</strong><span>agreement with human labels, Reel Smart</span></div>
+        <div class="stat"><strong>4</strong><span>Vast Bank branches running Catch the Phish</span></div>
+      </div>
+
+      <ul class="news">
+        <li><time datetime="2026-10-26">Oct 26, 2026</time><span>Presented <em>Authority Contention in Micro-UAV Command Stacks</em> at IEEE CARS 2026.</span></li>
+        <li><time datetime="2026-10-21">Oct 21, 2026</time><span>Spoke at ThunderPlains 2026, Oklahoma City. The audience tried to break the live demo. It stayed up.</span></li>
       </ul>
-      <aside class="story" aria-label="ThunderPlains 2026 demo">
+    </section>
+
+    <!-- NOW & NEXT -->
+    <section id="now">
+      <h2>Now &amp; next</h2>
+      <p class="section-intro">What I'm building right now, and where each project goes from here.</p>
+      <div class="next-grid">
+        <article class="next-card">
+          <span class="status status-active">In progress</span>
+          <h3>Swarm hijack detection</h3>
+          <p>
+            Extending the published detector from single drones to two-drone delivery swarms, and
+            testing it on drones, routes and pairings it has never seen. One drone in the fleet is
+            held out entirely for the final test.
+          </p>
+          <p class="muted">Models are chosen for deployment as well as accuracy: explainable, with a tunable threshold, fast enough for real-time use on modest hardware.</p>
+        </article>
+        <article class="next-card">
+          <span class="status status-active">In progress</span>
+          <h3>Real-time detection on ROS&nbsp;2</h3>
+          <p>
+            A Rust detection node running the trained model through ONNX Runtime, publishing alerts
+            straight onto the ROS&nbsp;2 graph alongside the drones' telemetry.
+          </p>
+        </article>
+        <article class="next-card">
+          <span class="status status-planned">Planned</span>
+          <h3>Draw-your-own delivery routes</h3>
+          <p>
+            A GUI for drawing drone delivery routes inside the city's valid flight space, replacing
+            hard-coded mission profiles.
+          </p>
+        </article>
+        <article class="next-card">
+          <span class="status status-planned">Planned</span>
+          <h3>Catch the Phish, next version</h3>
+          <p>
+            Adaptive difficulty driven by ML, a teacher dashboard with per-student progress, and
+            new phishing examples generated by Reel Smart.
+          </p>
+        </article>
+        <article class="next-card">
+          <span class="status status-planned">Planned</span>
+          <h3>Reel Smart for adults</h3>
+          <p>
+            An edition of the training content aimed at adults, including older adults learning to
+            spot scams. I'm also exploring a hosted demo.
+          </p>
+        </article>
+        <article class="next-card">
+          <span class="status status-planned">Planned</span>
+          <h3>Write-up: the demo that stayed up</h3>
+          <p>
+            What happened when ThunderPlains attendees scripted junk traffic at a live event-driven
+            system, and why it kept running.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work-intro">
+      <h2>Selected work</h2>
+      <p class="section-intro">
+        From the sensor network that instruments a smart-city testbed, to the drone security
+        research built on top of it, to software that teaches people to spot phishing.
+      </p>
+    </section>
+
+    <!-- SMART CITY -->
+    <section class="project" id="smart-city">
+      <header class="project-head">
+        <span class="tag">OCII &middot; Full-stack platform</span>
+        <h2>Smart-City Real-Time Monitoring Platform</h2>
+        <p class="tagline">Live telemetry from a distributed sensor network, streamed to a browser dashboard.</p>
+      </header>
+
+      <p>
+        I designed and built a full-stack, real-time monitoring platform for smart-city cybersecurity
+        research at OCII. It ingests live data from about seven ESP32 sensor nodes across several
+        buildings, covering four RF bands (Wi-Fi, 433&nbsp;MHz, GPS L1/L5 and LoRaWAN), and streams it
+        to a browser dashboard over an event-driven MQTT and Socket.io architecture. It detects and
+        classifies RF disruption in real time and shows live telemetry from drone missions alongside
+        the sensor network. I also write and flash the C++ firmware on the sensor nodes.
+      </p>
+
+      <figure class="media media-wide">
+        <img src="{{ '/assets/images/smartcity4.png' | relative_url }}" alt="Smart-city monitoring dashboard with live sensor readings" loading="lazy">
+        <figcaption>The live monitoring dashboard.</figcaption>
+      </figure>
+
+      <ul class="points">
+        <li>React front end with live sensor dashboards, RF disruption analysis, and drone flight paths drawn on an HTML5 canvas.</li>
+        <li>Node.js backend with MQTT ingestion, metric normalization across devices that each report differently, Socket.io broadcast, a REST API, and SQLite storage.</li>
+        <li>A drone-tracking view that follows swarm delivery missions and raises alerts.</li>
+        <li>Drone telemetry integration with ROS&nbsp;2 output and automated MCAP flight recording, plus an MJPEG video proxy and PCM audio over WebSocket.</li>
+      </ul>
+
+      <div class="callout">
+        <h3>ThunderPlains 2026: the live demo the audience tried to break</h3>
         <p>
-          At ThunderPlains 2026, audience phones joined the testbed's MQTT bus live, through a
-          QR code and a relay hosted on Render. Developers in the room wrote scripts to flood it
-          with junk data. It stayed up.
+          My 50-minute talk, <em>When Every Device Speaks a Different Language: Building Resilient
+          Event-Driven Systems</em>, was built on this platform. Audience phones joined the testbed's
+          MQTT bus live through a QR code and a relay hosted on Render. Developers in the room wrote
+          scripts to flood it with junk data. It stayed up.
         </p>
-      </aside>
-      <p class="stack"><span>Built with</span> React, Node.js, Socket.io, MQTT, SQLite, C++ on ESP32, ROS&nbsp;2</p>
-      <p class="project-links">
-        <a href="{{ gh }}/ThunderPlains-2026-smart-city-demo">Public demo code</a>
-      </p>
-    </div>
-  </article>
+      </div>
 
-  <article class="project" id="reel-smart">
-    <header class="project-head">
-      <h3>Reel Smart</h3>
-      <p class="project-ctx">Personal project, 2026</p>
-    </header>
-    <div class="project-body">
-      <p>
-        A local-LLM pipeline that generates, scores, and evolves phishing-awareness training
-        messages. Nothing leaves the system until a person has reviewed and approved it.
-      </p>
-      <ul>
-        <li>The detector, not the model, writes the clue tags. It is calibrated against human-labeled data to about 82% agreement.</li>
-        <li>A red-team suite mapped to the OWASP Top 10 for LLM Applications and the OWASP Agentic Top 10. Prompt injection, poisoned-feed, secret-leakage, and misuse cases are all blocked with defenses on.</li>
-        <li>A live threat-intelligence feed from the FBI's IC3, behind layered defenses: a source allowlist, headline sanitization, and passing the model labels rather than raw text.</li>
+      <ul class="chips" aria-label="Technologies">
+        <li>React</li><li>Node.js</li><li>Socket.io</li><li>MQTT</li><li>SQLite</li><li>REST</li>
+        <li>C++ / ESP32</li><li>ROS&nbsp;2</li><li>MCAP</li><li>WebSocket</li>
       </ul>
-      <p class="stack"><span>Built with</span> Python, Ollama, Streamlit, SQLite</p>
-      <p class="project-links">
-        <a href="{{ gh }}/reel-smart">Code</a>
+      <p class="actions">
+        <a class="button" href="{{ gh }}/ThunderPlains-2026-smart-city-demo" target="_blank" rel="noopener">Demo repository</a>
+        <a class="button button-ghost" href="{{ site.links.thunderplains_post }}" target="_blank" rel="noopener">ThunderPlains post</a>
       </p>
-    </div>
-  </article>
+    </section>
 
-  <article class="project" id="uav-security">
-    <header class="project-head">
-      <h3>Micro-UAV Command-Stack Security</h3>
-      <p class="project-ctx">Oklahoma Cyber Innovation Institute, research</p>
-    </header>
-    <div class="project-body">
-      <p>
-        How command authority gets contested on small drones. On a Crazyflie testbed we
-        characterized a class of command-authority vulnerabilities, then built a Random Forest
-        detector that flags hijacks from flight telemetry.
-      </p>
-      <table class="results">
-        <caption>Hijack detection results</caption>
-        <thead>
-          <tr><th scope="col">Method</th><th scope="col">F1</th><th scope="col">False-positive rate</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">Random Forest on telemetry</th><td>0.906</td><td>1.18%</td></tr>
-          <tr><th scope="row">Rule-based baseline</th><td>&ndash;</td><td>3.55%</td></tr>
-        </tbody>
-      </table>
-      <h4>In progress: multi-drone swarms</h4>
-      <p>
-        The next phase extends detection to swarm delivery missions and tests it on drones,
-        routes, and drone pairings the model has never seen, using leave-one-drone-out and
-        leave-one-mission-out validation. Trial data showed that an intruding radio is
-        detectable seconds before the flight path changes, which led to a two-signal design:
-        an early link-quality signal, confirmed by a trajectory-residual signal once the
-        flight starts to deviate.
-      </p>
-      <p class="stack"><span>Built with</span> Python, scikit-learn, XGBoost, PyTorch, Optuna, MLflow, ROS&nbsp;2 with MCAP recording, and a Rust detection node running ONNX Runtime</p>
+    <!-- DRONE SECURITY -->
+    <section class="project" id="drone-security">
+      <header class="project-head">
+        <span class="tag">OCII / OCAST &middot; Published research</span>
+        <h2>Micro-UAV Command-Stack Security &amp; Swarm Hijack Detection</h2>
+        <p class="tagline">Presented at IEEE CARS 2026, now extending to multi-drone delivery swarms.</p>
+      </header>
 
-      <h4>Testbed software</h4>
       <p>
-        The flight and monitoring code the experiments run on, published on its own,
-        separate from the research tooling.
+        As drone operations move into cities and multi-drone missions, a compromised command channel
+        becomes a real risk. This work is part of an OCAST-supported initiative led by OCII to position
+        Tulsa as a regional hub for unmanned aerial systems and smart-city technology. On a Crazyflie
+        testbed we characterized a class of command-authority vulnerabilities in micro-UAV command
+        stacks, then built a detector that flags hijacks from flight telemetry alone. The work was
+        accepted and presented as <em>Authority Contention in Micro-UAV Command Stacks</em> at IEEE
+        CARS 2026.
       </p>
-      <ul>
-        <li><strong>Delivery mission runner.</strong> Flies several Crazyflies in parallel on grid-aligned delivery routes, with a descent at each drop-off, battery checks before every leg, and telemetry logged without stalling the radio link.</li>
-        <li><strong>Trajectory planner.</strong> Turns each route into a smooth 7th-order polynomial trajectory that the drone flies onboard, rounding corners and drop-offs without stopping, which cuts a mission from about 2 min 45 s to about 1 min 15 s.</li>
-        <li><strong>Battery monitor.</strong> A small library on the drone's power telemetry that decides whether to keep flying, return to base, or land, and estimates remaining flight time from a recorded discharge.</li>
-        <li><strong>Rule-based flight monitor.</strong> Flags drones that leave their route or stop sending telemetry, records each outage, and shows a live map with an event log. Its fixed thresholds make a simple baseline to compare learned detectors against.</li>
-      </ul>
-      {%- if site.images.drone_monitor != "" %}
-      <figure class="shot">
-        <img src="{{ site.images.drone_monitor | relative_url }}" alt="Flight monitor map showing two drones' planned routes, one drone off route and one with a telemetry gap, next to an event log" loading="lazy">
-        <figcaption>The flight monitor, running on simulated telemetry.</figcaption>
-      </figure>
-      {%- endif %}
-      <p class="project-links"><a href="{{ gh }}/crazyflie-delivery-testbed">Testbed code</a></p>
+
+      <div class="stats stats-inline">
+        <div class="stat"><strong>0.906</strong><span>F1 score, Random Forest on telemetry</span></div>
+        <div class="stat"><strong>1.18%</strong><span>false-positive rate</span></div>
+        <div class="stat"><strong>3.55%</strong><span>false-positive rate, rule-based baseline</span></div>
+      </div>
+
+      <div class="media-grid">
+        <figure class="media video">
+          <video controls preload="metadata" playsinline>
+            <source src="{{ '/assets/video/smartcity1.mp4' | relative_url }}" type="video/mp4">
+          </video>
+        </figure>
+        <figure class="media video">
+          <video controls preload="metadata" playsinline>
+            <source src="{{ '/assets/video/smartcity6.mp4' | relative_url }}" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+
+      <details>
+        <summary>Delivery missions and trajectory planning</summary>
+        <div class="details-body">
+          <p>
+            Drones fly grid-aligned delivery routes in parallel, following "streets" through the testbed,
+            descending at each drop-off and returning home. The same routes can be flown waypoint by
+            waypoint, or as one smooth 7th-order polynomial trajectory that each drone flies onboard,
+            rounding corners and drop-offs without stopping. That cuts a mission from about 2 min 45 s
+            to about 1 min 15 s.
+          </p>
+          <figure class="media media-wide">
+            <img src="{{ '/assets/images/delivery-trajectories.png' | relative_url }}" alt="Two drone delivery routes shown in top view, 3D, and height over time" loading="lazy">
+            <figcaption>Both delivery missions as smooth trajectories: top view, 3D, and height over time.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details>
+        <summary>Battery monitoring and flight-time estimation</summary>
+        <div class="details-body">
+          <p>
+            A small library on the drone's power telemetry decides before every leg whether to keep
+            flying, return to base, or land, and refuses to take off without battery data. It estimates
+            remaining flight time from a voltage lookup table built from a recorded discharge flight.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Rule-based flight monitor (baseline)</summary>
+        <div class="details-body">
+          <p>
+            Fixed-threshold rules flag drones that leave their planned route or stop sending telemetry,
+            escalate gaps from warning to critical, and record every outage. A live map shows each
+            drone's route, track and status next to an event log. Simple, transparent rules like these
+            make a baseline to compare learned detectors against.
+          </p>
+          <figure class="media media-wide">
+            <img src="{{ '/assets/images/flight-monitor.png' | relative_url }}" alt="Flight monitor map with one drone off route and one with a telemetry gap, next to an event log" loading="lazy">
+            <figcaption>The flight monitor, running on simulated telemetry.</figcaption>
+          </figure>
+        </div>
+      </details>
+
+      <details>
+        <summary>ML hijack detector</summary>
+        <div class="details-body">
+          <p>
+            A Random Forest classifier trained on flight telemetry separates hijacked flights from
+            normal ones. It reached an F1 score of 0.906, and cut false positives to 1.18% against
+            3.55% for the rule-based baseline.
+          </p>
+        </div>
+      </details>
+
+      <details open>
+        <summary>Next phase: multi-drone swarm generalization</summary>
+        <div class="details-body">
+          <figure class="media media-wide">
+            <img src="{{ '/assets/images/smartcity5.png' | relative_url }}" alt="Architecture of the next-phase swarm detection system" loading="lazy">
+            <figcaption>Architecture of the next-phase system.</figcaption>
+          </figure>
+          <p>
+            The next phase extends detection to multi-drone delivery missions and tests generalization
+            across drones, routes and drone pairings the model has never seen, not just held-out
+            samples. Early trial data reshaped the design: a hijack attempt is detectable from the
+            radio link seconds before the flight path changes. That led to a two-signal architecture,
+            an early link-quality signal confirmed by a trajectory-residual signal once the flight
+            starts to deviate.
+          </p>
+          <ul class="points">
+            <li><strong>Data collection.</strong> Python mission control, MQTT telemetry, and mission profiles generated from a city layout config.</li>
+            <li><strong>ROS&nbsp;2 and telemetry.</strong> A multi-drone bridge, MCAP flight recording, and Foxglove for visualization and analysis.</li>
+            <li><strong>Applied ML.</strong> scikit-learn, XGBoost and PyTorch with CUDA, Optuna for tuning and MLflow for tracking; Random Forest, XGBoost and sequence models compared against the published baseline with leave-one-drone-out and leave-one-mission-out validation.</li>
+            <li><strong>Real-time detection.</strong> A Rust node running the model through ONNX Runtime, publishing alerts back onto the ROS&nbsp;2 graph.</li>
+          </ul>
+          <p class="status-line"><span class="status status-active">In progress</span> Active data collection and pipeline development, building on the published CARS 2026 results.</p>
+        </div>
+      </details>
 
       <p class="scope">
-        <strong>Scope and ethics.</strong> All experiments ran in a controlled lab, on hardware
-        we own, with defensive intent. No third-party systems were targeted. Attack tooling is
-        not published; public material covers the vulnerability class at the level the paper
-        describes it, and the detector.
+        <strong>Scope and ethics.</strong> All experiments ran in a controlled lab, on hardware we own,
+        with defensive intent. No third-party systems were targeted. Attack tooling is not published;
+        public material covers the vulnerability class at the level the paper describes it, the
+        detector, and the testbed software.
       </p>
-      {%- if site.links.cars_paper != "" %}
-      <p class="project-links"><a href="{{ site.links.cars_paper }}">Paper</a></p>
-      {%- endif %}
-    </div>
-  </article>
 
-  <article class="project" id="catch-the-phish">
-    <header class="project-head">
-      <h3>Catch the Phish</h3>
-      <p class="project-ctx">Oklahoma Cyber Innovation Institute</p>
-    </header>
-    <div class="project-body">
+      <ul class="chips" aria-label="Technologies">
+        <li>Python</li><li>cflib</li><li>scikit-learn</li><li>XGBoost</li><li>PyTorch</li>
+        <li>ROS&nbsp;2</li><li>Rust</li><li>ONNX Runtime</li><li>MQTT</li><li>Foxglove</li>
+      </ul>
+      <p class="actions">
+        <a class="button" href="{{ gh }}/crazyflie-delivery-testbed" target="_blank" rel="noopener">Testbed code</a>
+        {%- if site.links.cars_paper != "" %}
+        <a class="button button-ghost" href="{{ site.links.cars_paper }}" target="_blank" rel="noopener">Read the paper</a>
+        {%- endif %}
+      </p>
+    </section>
+
+    <!-- CATCH THE PHISH -->
+    <section class="project" id="catch-the-phish">
+      <header class="project-head">
+        <span class="tag">OCII &middot; Educational game + analytics</span>
+        <h2>Catch the Phish: Before the Phish Catches You!</h2>
+        <p class="tagline">A Godot arcade game that teaches phishing detection, with a real-time analytics platform behind it.</p>
+      </header>
+
       <p>
-        A game that teaches people to spot phishing, with difficulty that ramps up, scoring, and
-        built-in analytics. A Node, Express, and MongoDB backend collects gameplay data for a
-        dashboard.
+        Beyond research, I build software that ships and gets used. In Catch the Phish, players catch
+        phishing emails on fishing hooks and let the legitimate ones swim past, while Bitey the fish
+        tries to trip them up. Points come from catching phish; missing one or grabbing a real email
+        costs you. The game gets harder as players improve, with more convincing phishing patterns,
+        spoofed domains and less time to decide.
       </p>
       <p>
-        Used in Oklahoma middle and high school classrooms, shown at the Oklahoma Summit, and
-        running on arcade cabinets in four Vast Bank branches.
+        It's used in Oklahoma middle and high school classrooms as part of OCII's cybersecurity
+        curriculum, was showcased at the 58th Oklahoma Summit and the OKC Innovation event, and runs on
+        arcade cabinets I built with a Raspberry Pi at four Vast Bank branches in Tulsa. I own the
+        project end to end.
       </p>
-      {%- if site.images.phish_dashboard != "" %}
-      <figure class="shot">
-        <img src="{{ site.images.phish_dashboard | relative_url }}" alt="Analytics dashboard showing player accuracy, response time, and level progression" loading="lazy">
-        <figcaption>The analytics dashboard.</figcaption>
-      </figure>
-      {%- endif %}
-      <p class="stack"><span>Built with</span> Godot, Node.js, Express, MongoDB</p>
-      {%- if site.links.catch_the_phish != "" %}
-      <p class="project-links"><a href="{{ site.links.catch_the_phish }}">Play it on itch.io</a></p>
-      {%- endif %}
-    </div>
-  </article>
-</section>
 
-<section id="talks-and-papers" class="section wrap" aria-labelledby="talks-heading">
-  <h2 id="talks-heading">Talks and papers</h2>
-  <ul class="entries">
-    <li>
-      <p class="entry-title">Authority Contention in Micro-UAV Command Stacks</p>
-      <p>IEEE CARS 2026, Autonomous Systems / CAE-R track. Presented October 26, 2026; proceedings forthcoming.</p>
-      {%- if site.links.cars_paper != "" %}
-      <p><a href="{{ site.links.cars_paper }}">Read the paper</a></p>
-      {%- endif %}
-    </li>
-    <li>
-      <p class="entry-title">When Every Device Speaks a Different Language: Building Resilient Event-Driven Systems</p>
-      <p>ThunderPlains 2026, Oklahoma City, October 21, 2026. A 50-minute talk with a live demo on the smart-city testbed.</p>
-      {%- if site.links.thunderplains != "" %}
-      <p><a href="{{ site.links.thunderplains }}">Post about the talk on LinkedIn</a></p>
-      {%- endif %}
-    </li>
-  </ul>
-</section>
+      <div class="media-grid media-grid-uneven">
+        <figure class="media">
+          <img src="{{ '/assets/images/phishing4.jpg' | relative_url }}" alt="Catch the Phish analytics dashboard" loading="lazy">
+          <figcaption>Analytics dashboard.</figcaption>
+        </figure>
+        <figure class="media">
+          <img src="{{ '/assets/images/phishing1.jpg' | relative_url }}" alt="Catch the Phish at the 58th Oklahoma Summit" loading="lazy">
+          <figcaption>At the 58th Oklahoma Summit.</figcaption>
+        </figure>
+      </div>
 
-<section id="experience" class="section wrap" aria-labelledby="experience-heading">
-  <h2 id="experience-heading">Experience</h2>
-  <ul class="entries">
-    <li>
-      <p class="entry-title">Senior Software Engineer and Researcher</p>
-      <p class="entry-meta">Oklahoma Cyber Innovation Institute, University of Tulsa. 2024 to present.</p>
+      <p class="actions">
+        <a class="button" href="{{ site.links.catch_the_phish }}" target="_blank" rel="noopener">Play on itch.io</a>
+      </p>
+
+      <details>
+        <summary>Game design and implementation</summary>
+        <div class="details-body">
+          <p>
+            Built in Godot 4 for both arcade cabinets and the browser. Difficulty adjusts to each
+            player's accuracy and reaction time, and the phishing patterns get more sophisticated as
+            they progress.
+          </p>
+          <ul class="points">
+            <li>Godot 4.x engine, exported to desktop and HTML5.</li>
+            <li>Dynamic difficulty adjustment.</li>
+            <li>A phishing-pattern system with increasingly sophisticated examples, domain-spoofing cues and timing pressure.</li>
+            <li>Scoring with rewards for caught phish and penalties for misses and false catches.</li>
+            <li>Arcade cabinets built around a Raspberry Pi with a speaker, encoder and monitor.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Real-time analytics architecture</summary>
+        <div class="details-body">
+          <p>
+            The HTML5 build talks directly to an analytics service on a self-hosted Ubuntu server.
+            Every gameplay event (choices, mistakes, response times, difficulty changes, sessions) is
+            logged in real time and can be explored through a dashboard.
+          </p>
+          <ol class="flow">
+            <li><strong>Godot game</strong><span>runs in the browser as an HTML5 export</span></li>
+            <li><strong>JavaScript bridge</strong><span>sends JSON events over HTTP</span></li>
+            <li><strong>Express API</strong><span>validates and stores each event</span></li>
+            <li><strong>MongoDB</strong><span>indexed event collections for aggregation</span></li>
+            <li><strong>Dashboard</strong><span>accuracy, response time, phishing type, level progression</span></li>
+          </ol>
+          <p>
+            The dashboard is vanilla HTML and JavaScript over a REST API, with real-time charts that
+            support classroom monitoring and long-term studies.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Planned extensions</summary>
+        <div class="details-body">
+          <ul class="points">
+            <li>ML-based adaptive difficulty.</li>
+            <li>A teacher dashboard with student-by-student progress.</li>
+            <li>An expanded phishing dataset, with new examples generated by Reel Smart.</li>
+            <li>Integration with smart-city and IoT education modules.</li>
+            <li>Multiplayer and leaderboards on the existing event pipeline.</li>
+          </ul>
+        </div>
+      </details>
+
+      <ul class="chips" aria-label="Technologies">
+        <li>Godot 4</li><li>HTML5</li><li>Node.js</li><li>Express</li>
+        <li>MongoDB</li><li>REST</li><li>Raspberry Pi</li>
+      </ul>
+    </section>
+
+    <!-- REEL SMART -->
+    <section class="project" id="reel-smart">
+      <header class="project-head">
+        <span class="tag">Personal project &middot; AI / LLM security</span>
+        <h2>Reel Smart</h2>
+        <p class="tagline">A local-LLM pipeline that writes phishing-awareness training content, and is hardened against attacks on itself.</p>
+      </header>
+
       <p>
-        Lead the research software and the hardware-software platform for the smart-city
-        initiative in the autonomy lab, and build the testbeds the research needs. Python and
-        Node backends, React front ends, and data pipelines across a distributed sensor network.
-        Keep live deployments and public demos reliable, and mentor through code review.
+        Reel Smart generates, scores and evolves phishing-awareness training messages with local
+        models. It started as an agent producing fresh phishing examples for Catch the Phish, and
+        grew into a pipeline in its own right. Nothing leaves the system until a person has reviewed
+        and approved it.
       </p>
-    </li>
-    <li>
-      <p class="entry-title">Project and Event Coordinator</p>
-      <p class="entry-meta">UC San Diego. 2022 to 2024.</p>
-    </li>
-    <li>
-      <p class="entry-title">Lead R&amp;D Engineer, promoted from Software Engineer</p>
-      <p class="entry-meta">IRISA Co., Isfahan. 2010 to 2016.</p>
-      <p>
-        Built high-throughput log ingestion and processing in Python and C++, data pipelines
-        for real-time analysis, and anomaly-detection components in production. In my final
-        year, led R&amp;D on the backend and anomaly-detection modules.
+
+      <ol class="flow flow-row">
+        <li><strong>Generate</strong><span>local LLM via Ollama</span></li>
+        <li><strong>Score</strong><span>detector tags the clues</span></li>
+        <li><strong>Evolve</strong><span>improve on the best-scoring drafts</span></li>
+        <li><strong>Review</strong><span>human approval gate</span></li>
+        <li><strong>Export</strong><span>to training content</span></li>
+      </ol>
+
+      <ul class="points">
+        <li>The detector, not the model, writes the clue tags. It is calibrated against human-labeled data to about 82% agreement.</li>
+        <li>A red-team suite mapped to the OWASP Top 10 for LLM Applications and the OWASP Agentic Top 10. Prompt injection, poisoned-feed, secret-leakage and misuse cases are all blocked with defenses on.</li>
+        <li>A live threat-intelligence feed from the FBI's IC3, behind layered defenses: a source allowlist, headline sanitization, and passing the model labels rather than raw text.</li>
+      </ul>
+
+      <ul class="chips" aria-label="Technologies">
+        <li>Python</li><li>Ollama</li><li>Streamlit</li><li>SQLite</li><li>LLM agents</li><li>Red-teaming</li>
+      </ul>
+      <p class="actions">
+        <a class="button" href="{{ gh }}/reel-smart" target="_blank" rel="noopener">View repository</a>
       </p>
-    </li>
-    <li>
-      <p class="entry-title">M.S. and B.S., Software Engineering</p>
-      <p class="entry-meta">University of Isfahan.</p>
-    </li>
-  </ul>
+    </section>
 
-  <dl class="skills">
-    <div><dt>Backend</dt><dd>Python, Node.js, C++, REST API design, authentication and validation</dd></div>
-    <div><dt>Front end and real time</dt><dd>React, Socket.io, MQTT, WebSocket</dd></div>
-    <div><dt>Data</dt><dd>MongoDB, SQL Server, SQLite; schema design, indexing, query tuning</dd></div>
-    <div><dt>Security and ML</dt><dd>Threat and anomaly detection, telemetry analysis, LLM red-teaming, local LLMs with Ollama</dd></div>
-    <div><dt>Delivery</dt><dd>Git, GitHub Actions, Azure DevOps, unit, integration, and API testing</dd></div>
-  </dl>
-</section>
+    <!-- TALKS & PAPERS -->
+    <section id="talks">
+      <h2>Talks &amp; papers</h2>
+      <div class="entries">
+        <article class="entry">
+          <span class="entry-kind">Paper</span>
+          <div>
+            <h3>Authority Contention in Micro-UAV Command Stacks</h3>
+            <p>IEEE CARS 2026, Autonomous Systems / CAE-R track. Presented October 26, 2026; proceedings forthcoming.</p>
+            {%- if site.links.cars_paper != "" %}
+            <p><a href="{{ site.links.cars_paper }}" target="_blank" rel="noopener">Read the paper</a></p>
+            {%- endif %}
+          </div>
+        </article>
+        <article class="entry">
+          <span class="entry-kind">Talk</span>
+          <div>
+            <h3>When Every Device Speaks a Different Language: Building Resilient Event-Driven Systems</h3>
+            <p>ThunderPlains 2026, Oklahoma City, October 21, 2026. A 50-minute talk with a live demo on the smart-city testbed.</p>
+            <p><a href="{{ site.links.thunderplains_post }}" target="_blank" rel="noopener">Post about the talk</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-<section id="contact" class="section wrap" aria-labelledby="contact-heading">
-  <h2 id="contact-heading">Contact</h2>
-  <p class="lead">
-    I'm looking for roles in AI and LLM security, ML threat detection, and backend or
-    full-stack engineering.
-  </p>
-  <ul class="hero-links">
-    {%- if site.email != "" %}
-    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-    {%- endif %}
-    {%- if site.linkedin_url != "" %}
-    <li><a href="{{ site.linkedin_url }}">LinkedIn</a></li>
-    {%- endif %}
-    <li><a href="{{ gh }}">GitHub</a></li>
-    <li><a href="{{ site.resume_file | relative_url }}">Resume (PDF)</a></li>
-  </ul>
-  <p class="fine">Authorized to work permanently in the U.S.; no sponsorship needed.</p>
-</section>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ol class="timeline">
+        <li>
+          <span class="when">2024 &ndash; present</span>
+          <h3>Senior Software Engineer &amp; Researcher</h3>
+          <p class="where">Oklahoma Cyber Innovation Institute, University of Tulsa</p>
+          <p>Lead the research software and hardware-software platform for the smart-city initiative in the autonomy lab, and build the testbeds the research needs. Python and Node backends, React front ends, and data pipelines across a distributed sensor network. Keep live deployments and public demos reliable, and mentor through code review.</p>
+        </li>
+        <li>
+          <span class="when">2022 &ndash; 2024</span>
+          <h3>Project &amp; Event Coordinator</h3>
+          <p class="where">UC San Diego</p>
+        </li>
+        <li>
+          <span class="when">2010 &ndash; 2016</span>
+          <h3>Lead R&amp;D Engineer, promoted from Software Engineer</h3>
+          <p class="where">IRISA Co., Isfahan</p>
+          <p>Built high-throughput log ingestion and processing in Python and C++, data pipelines for real-time analysis, and anomaly-detection components in production. In my final year, led R&amp;D on the backend and anomaly-detection modules.</p>
+        </li>
+        <li>
+          <span class="when">Education</span>
+          <h3>M.S. and B.S., Software Engineering</h3>
+          <p class="where">University of Isfahan</p>
+        </li>
+      </ol>
+
+      <div class="skills">
+        <div><h3>Backend</h3><p>Python, Node.js, C++, REST API design, authentication and validation</p></div>
+        <div><h3>Front end &amp; real time</h3><p>React, Socket.io, MQTT, WebSocket, HTML5 canvas</p></div>
+        <div><h3>Data</h3><p>MongoDB, SQL Server, SQLite; schema design, indexing, query tuning</p></div>
+        <div><h3>ML &amp; security</h3><p>Threat and anomaly detection, telemetry analysis, scikit-learn, XGBoost, PyTorch, LLM red-teaming, local LLMs</p></div>
+        <div><h3>Robotics &amp; embedded</h3><p>ROS&nbsp;2, Crazyflie / cflib, ESP32 firmware in C++, Raspberry Pi</p></div>
+        <div><h3>Delivery</h3><p>Git, GitHub Actions, Azure DevOps, unit, integration and API testing</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <p class="lead">I'm looking for roles in AI and LLM security, ML threat detection, and backend or full-stack engineering. Based in Tulsa; open to relocating to Texas or California, and to remote work.</p>
+      <p class="actions">
+        <a class="button" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <a class="button button-ghost" href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button button-ghost" href="{{ site.resume_file | relative_url }}" target="_blank" rel="noopener">Resume</a>
+      </p>
+      <p class="fine">Authorized to work permanently in the U.S.; no sponsorship needed.</p>
+    </section>
+
+    <footer class="site-footer">&copy; {{ site.time | date: "%Y" }} Fatemeh Azam</footer>
+  </main>
+</div>
+</body>
+</html>
